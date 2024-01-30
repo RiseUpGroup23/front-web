@@ -54,7 +54,7 @@ export default function FormularioContacto() {
         if (Object.keys(newErrors).length === 0) {
             try {
                 // console.log(formData);
-                const response = await fetch('http://localhost:3000/enviar-correo', {
+                const response = await fetch('http://backriseup-production.up.railway.app/enviar-correo', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
