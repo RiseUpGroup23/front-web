@@ -55,12 +55,13 @@ export default function FormularioContacto() {
             try {
                 // console.log(formData);
                 // Hay que ver este error
-                const response = await fetch('http://backriseup-production.up.railway.app/enviar-correo', {
+                const response = await fetch('https://backriseup-production.up.railway.app/enviar-correo', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
                     },
                     body: JSON.stringify(formData),
+                    // mode: 'no-cors',
                 });
                 // console.log(response);
                 if (response.ok) {
@@ -170,7 +171,7 @@ export default function FormularioContacto() {
 
                     <button type='submit' className='mt-5 self-center'>
                         <div id="fifth" className="buttonBox md:w-[400px]">
-                            <button>¡Subir de Nivel!</button>
+                            <span>¡Subir de Nivel!</span>
                         </div>
                     </button>
                 </div>
