@@ -61,7 +61,6 @@ export default function FormularioContacto() {
                         'Content-Type': 'application/json',
                     },
                     body: JSON.stringify(formData),
-                    // mode: 'no-cors',
                 });
                 // console.log(response);
                 if (response.ok) {
