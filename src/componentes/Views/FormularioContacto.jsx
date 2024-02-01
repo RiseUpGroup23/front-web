@@ -111,7 +111,7 @@ export default function FormularioContacto() {
                             value={formData.nombre}
                             onChange={handleInputChange}
                             className={`text-black rounded-md ${errors.nombre && 'border-red-500'} p-2`}
-                            placeholder="  Ernesto"
+                            placeholder="Ernesto"
                             required
                         />
                         {errors.nombre && <p className="text-red-500">{errors.nombre}</p>}
@@ -125,7 +125,7 @@ export default function FormularioContacto() {
                             value={formData.nombreEmpresa}
                             onChange={handleInputChange}
                             className={`text-black rounded-md ${errors.nombreEmpresa && 'border-red-500'} p-2`}
-                            placeholder="  RiseUp"
+                            placeholder="RiseUp"
                             required
                         />
                         {errors.nombreEmpresa && <p className="text-red-500">{errors.nombreEmpresa}</p>}
@@ -137,7 +137,7 @@ export default function FormularioContacto() {
                             value={formData.telefono}
                             onChange={handleInputChange}
                             className={`text-black rounded-md ${errors.telefono && 'border-red-500'} p-2`}
-                            placeholder="  123-456-7890"
+                            placeholder="123-456-7890"
                         />
                         {errors.telefono && <p className="text-red-500">{errors.telefono}</p>}
                     </div>
@@ -149,7 +149,7 @@ export default function FormularioContacto() {
                             value={formData.email}
                             onChange={handleInputChange}
                             className={`text-black rounded-md ${errors.email && 'border-red-500'} p-2`}
-                            placeholder="  correo@correo.com"
+                            placeholder="correo@correo.com"
                             required
                         />
                         {errors.email && <p className="text-red-500">{errors.email}</p>}
