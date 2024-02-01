@@ -38,7 +38,7 @@ export default function NavBar() {
       <Link to="/">
         <img
           src="LogoRiseUp/Logo.png"
-          className="md:aspect-[3] object-contain w-[200px] mt-1 cursor-pointer"
+          className="md:aspect-[3] object-contain w-[100px] mt-1 cursor-pointer"
         />
       </Link>
 
