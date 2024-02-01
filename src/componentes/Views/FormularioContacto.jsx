@@ -110,7 +110,7 @@ export default function FormularioContacto() {
                             name="nombre"
                             value={formData.nombre}
                             onChange={handleInputChange}
-                            className={`text-black rounded-md ${errors.nombre && 'border-red-500'}`}
+                            className={`text-black rounded-md ${errors.nombre && 'border-red-500'} p-2`}
                             placeholder="  Ernesto"
                             required
                         />
@@ -124,7 +124,7 @@ export default function FormularioContacto() {
                             name="nombreEmpresa"
                             value={formData.nombreEmpresa}
                             onChange={handleInputChange}
-                            className={`text-black rounded-md ${errors.nombreEmpresa && 'border-red-500'}`}
+                            className={`text-black rounded-md ${errors.nombreEmpresa && 'border-red-500'} p-2`}
                             placeholder="  RiseUp"
                             required
                         />
@@ -136,7 +136,7 @@ export default function FormularioContacto() {
                             name="telefono"
                             value={formData.telefono}
                             onChange={handleInputChange}
-                            className={`text-black rounded-md ${errors.telefono && 'border-red-500'}`}
+                            className={`text-black rounded-md ${errors.telefono && 'border-red-500'} p-2`}
                             placeholder="  123-456-7890"
                         />
                         {errors.telefono && <p className="text-red-500">{errors.telefono}</p>}
@@ -148,7 +148,7 @@ export default function FormularioContacto() {
                             name="email"
                             value={formData.email}
                             onChange={handleInputChange}
-                            className={`text-black rounded-md ${errors.email && 'border-red-500'}`}
+                            className={`text-black rounded-md ${errors.email && 'border-red-500'} p-2`}
                             placeholder="  correo@correo.com"
                             required
                         />
@@ -162,7 +162,7 @@ export default function FormularioContacto() {
                             onChange={handleInputChange}
                             cols="30"
                             rows="10"
-                            className="text-black resize-none h-24 rounded-md"
+                            className="text-black resize-none h-24 rounded-md p-2"
                         />
                     </div>
 
