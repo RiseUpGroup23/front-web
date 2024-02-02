@@ -7,7 +7,7 @@ import { IoHomeOutline } from "react-icons/io5";
 import { RiContactsBookUploadLine } from "react-icons/ri";
 import { MdGroups } from "react-icons/md";
 
-import './style.css';
+import './styles.css';
 
 export default function NavBar() {
   const location = useLocation();
