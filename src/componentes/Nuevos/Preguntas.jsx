@@ -18,7 +18,7 @@ export default function Preguntas() {
       </div>
       <div className="mt-5">
         <h1 className="justify-center text-white text-center text-3xl md:text-5xl pt-2 pb-3">
-          <span className="font-medium">Sobre</span> nosotros
+          <span className="font-medium">Sobre</span> Nosotros
         </h1>
         <div className="flex flex-col md:flex-row m-4 gap-1 items-center md:items-start">
           <img

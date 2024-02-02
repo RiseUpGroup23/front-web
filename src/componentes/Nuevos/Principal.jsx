@@ -1,27 +1,23 @@
 import { Link } from 'react-router-dom'
-import './style.css'
+import './styles.css'
 
 export default function Principal() {
   return (
-    <div id="inicio" className="items-center flex-col relative flex">
+    <div id='inicio' className='relative flex items-center flex-col'>
       <img
         src="Fondos/Imagen1.jpg"
-        className="absolute h-full w-full object-cover"
+        className="md:object-cover object-contain md:w-[100%] md:h-[600px]"
+        // style={{ width: '100%', height: '600px' }} // Establecer el ancho deseado
+        alt="Descripción de la imagen"
       />
-      <div className="relative flex w-full max-w-screen-lg flex-col mt-10 mb-20 mx-auto">
-        <img
-          src="LogoRiseUp/Logo.png"
-          className="aspect-[4] object-contain self-center"
-        />
-        <div className="justify-center text-white text-center text-3xl md:text-5xl lg:text-5xl font-medium">
-          Elevamos tu presencia, multiplicamos tus ventas
-        </div>
-        <Link to="/enviar-correo" className='mt-8 md:mt-16 self-center'>
-          <div id="fifth" className="buttonBox md:w-[500px]">
+      <div className='absolute text-white text-center flex flex-col text-2xl md:text-5xl mt-8 md:mt-[150px]'>
+        Elevamos tu presencia, multiplicamos <br /> tus ventas
+        <Link to="/enviar-correo" className='mt-10 self-center'>
+          <div id="fifth" className="buttonBox md:w-[500px] md:mt-[100px]">
             <button className='md:text-3xl md:py-3'>¡Subir de Nivel!</button>
           </div>
         </Link>
       </div>
     </div>
-  )
+  );
 }
