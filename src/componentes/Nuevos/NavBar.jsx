@@ -4,8 +4,8 @@ import { useState, useEffect } from "react";
 import { MdOutlineMenu } from "react-icons/md";
 import { IoIosCloseCircleOutline } from "react-icons/io";
 import { IoHomeOutline } from "react-icons/io5";
-import { RiContactsBookUploadLine } from "react-icons/ri";
-import { MdGroups } from "react-icons/md";
+// import { RiContactsBookUploadLine } from "react-icons/ri";
+// import { MdGroups } from "react-icons/md";
 
 import './style.css';
 
@@ -55,7 +55,7 @@ export default function NavBar() {
       <div className={`md:flex md:items-center gap-10 ${menuVisible ? 'md:flex fixed inset-y-0 right-0 bg-black bg-opacity-60 z-50 text-right' : 'hidden'}`}>
         {isSmallScreen && (
           <button
-            className="text-red-700 text-3xl cursor-pointer justify-center flex mt-2"
+            className="text-red-700 text-3xl cursor-pointer flex mt-2 justify-center"
             onClick={toggleMenu}
           >
             <IoIosCloseCircleOutline />
@@ -68,9 +68,9 @@ export default function NavBar() {
               {isSmallScreen ? (
                 <a
                   href="#quienesSomos"
-                  className="text-white text-2xl"
+                  className="text-white text-1xl"
                 >
-                  <MdGroups />
+                  ¿Quiénes Somos?
                 </a>
               ) : (
                 <Link
@@ -84,9 +84,9 @@ export default function NavBar() {
               {isSmallScreen ? (
                 <Link
                   to="/enviar-correo"
-                  className="text-white text-2xl mt-3"
+                  className="text-white text-1xl mt-3"
                 >
-                  <RiContactsBookUploadLine />
+                  Contacto
                 </Link>
               ) : (
                 <a

@@ -41,3 +41,15 @@ button {
 #fifth:hover {
     border: 1px solid rgba(255, 255, 255, 1);
 }
+
+.mensaje {
+    color: white;
+    margin-bottom: 5px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-radius: 15px;
+    background-color: green;
+    font-size: 15px;
+    font-weight: bold;
+    text-align: center;
+}

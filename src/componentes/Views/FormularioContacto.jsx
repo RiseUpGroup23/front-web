@@ -53,8 +53,6 @@ export default function FormularioContacto() {
 
         if (Object.keys(newErrors).length === 0) {
             try {
-                // console.log(formData);
-                // Hay que ver este error
                 const response = await fetch('https://backriseup-production.up.railway.app/enviar-correo', {
                     method: 'POST',
                     headers: {
@@ -62,9 +60,8 @@ export default function FormularioContacto() {
                     },
                     body: JSON.stringify(formData),
                 });
-                // console.log(response);
                 if (response.ok) {
-                    console.log('Correo enviado con éxito');
+                    console.log('Correo enviado con correctamente');
                     setMensaje('Correo enviado correctamente');
                     setFormData({
                         nombre: '',
@@ -86,7 +83,7 @@ export default function FormularioContacto() {
 
     setTimeout(() => {
         setMensaje('')
-    }, 2000)
+    }, 5000)
 
     return (
         <div className="flex flex-col items-center mt-5">
@@ -96,10 +93,10 @@ export default function FormularioContacto() {
             <div className="justify-center text-white text-center text-1xl mt-6 md:text-2xl lg:text-2xl font-medium">
                 Contanos sobre tu proyecto, para <br /> poder brindarte el mejor <br /> asesoramiento
             </div>
-            <form className="rounded-3xl mt-6 border border-white px-10 py-8 text-white " onSubmit={handleSubmit}>
+            <form className="rounded-3xl mt-6 border  px-10 py-8 text-white " onSubmit={handleSubmit}>
                 <div className="flex flex-col">
                     {mensaje && (
-                        <div className={`bg-${mensaje.includes('correctamente') ? 'green' : 'red'}-600 mb-3 py-2 rounded-2xl text-center`}>
+                        <div className='mensaje'>
                             {mensaje}
                         </div>
                     )}
@@ -175,16 +172,16 @@ export default function FormularioContacto() {
                     </button>
                 </div>
             </form>
-            <div>
-                <img src="LogoRiseUp/Logo.png" className="w-[100px] lg:w-[150px] mt-10" />
-            </div>
-            <div className="flex w-full lg:w-[220px] gap-4 sm:gap-5 px-2 sm:px-5 my-2 justify-center">
+            <div className="bg-zinc-300 w-[100%] h-0.5 mt-10" />
+            <div className="flex w-full lg:w-[220px] gap-4 sm:gap-5 px-2 sm:px-5 md:mt-5 mt-4 justify-center">
                 <img src="Iconos/Instagram.svg" className="w-10 h-10 lg:w-12 lg:h-12 cursor-pointer" />
                 <img src="Iconos/LinkedIn.svg" className="w-10 h-10 lg:w-12 lg:h-12 cursor-pointer" />
                 <img src="Iconos/Facebook.svg" className="w-10 h-10 lg:w-12 lg:h-12 cursor-pointer" />
             </div>
-            <div className="bg-zinc-300 w-[50%] h-0.5 mt-5" />
-            <div className="mt-6 text-white text-xl sm:text-2xl lg:text-2xl font-light">
+            <div>
+                <img src="LogoRiseUp/Logo.png" className="w-[100px] lg:w-[150px]" />
+            </div>
+            <div className="text-white text-xl sm:text-2xl lg:text-2xl font-light">
                 Copyright © 2024 RiseUp inc.
             </div>
         </div>
