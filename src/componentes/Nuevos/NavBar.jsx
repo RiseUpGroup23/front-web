@@ -1,125 +1,120 @@
-import { Link, useLocation } from "react-router-dom";
-import { useState, useEffect } from "react";
-
-import { MdOutlineMenu } from "react-icons/md";
-import { IoIosCloseCircleOutline } from "react-icons/io";
-import { IoHomeOutline } from "react-icons/io5";
-// import { RiContactsBookUploadLine } from "react-icons/ri";
-// import { MdGroups } from "react-icons/md";
+import { useState } from "react";
+import { Link as RouterLink, useLocation } from "react-router-dom";
+import {
+  AppBar,
+  Toolbar,
+  IconButton,
+  Drawer,
+  List,
+  ListItem,
+  Hidden
+} from "@mui/material";
+import MenuIcon from "@mui/icons-material/Menu";
+import CloseIcon from "@mui/icons-material/Close";
 
 import './style.css';
+import { useEffect } from "react";
 
 export default function NavBar() {
   const location = useLocation();
-  const isHome = location.pathname === "/";
-  const isFormulario = location.pathname === "/enviar-correo";
-
+  const [isHome, setIsHome] = useState(location.pathname === "/");
+  const [isFormulario, setIsFormulario] = useState(location.pathname === "/enviar-correo");
   const [menuVisible, setMenuVisible] = useState(false);
-  const [isSmallScreen, setIsSmallScreen] = useState(window.innerWidth <= 768);
 
   const toggleMenu = () => {
     setMenuVisible(!menuVisible);
   };
 
   useEffect(() => {
-    const handleResize = () => {
-      setIsSmallScreen(window.innerWidth <= 768);
-    };
-
-    window.addEventListener("resize", handleResize);
-
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []);
+    setIsHome(location.pathname === "/");
+    setIsFormulario(location.pathname === "/enviar-correo");
+  }, [location])
 
   return (
-    <div className="bg-zinc-950 flex justify-between pr-5">
-      <Link to="/">
-        <img
-          src="LogoRiseUp/Logo.png"
-          className="md:aspect-[3] object-contain md:w-[200px] w-[100px] mt-1 cursor-pointer"
-        />
-      </Link>
+    <div>
+      <AppBar position="static" sx={{ backgroundColor: "black" }}>
+        <Toolbar sx={{ display: "flex", justifyContent: "space-between" }}>
+          <RouterLink to="/">
+            <img
+              src="LogoRiseUp/Logo.png" className="object-contain w-[125px]  mt-1 cursor-pointer" style={{ maxWidth: "unset" }}
+            />
+          </RouterLink>
+          <Hidden mdUp>
+            {!menuVisible && <IconButton
+              edge="start"
+              onClick={toggleMenu}
+              sx={{ color: "white", maxWidth: "min-content" }}
+            >
+              <MenuIcon />
+            </IconButton>}
+          </Hidden>
 
-      <div className="flex items-center md:hidden">
-        <button
-          id="menu-toggle"
-          className="text-white text-2xl cursor-pointer"
-          onClick={toggleMenu}
-        >
-          {menuVisible ? "" : <MdOutlineMenu />}
-        </button>
-      </div>
+          <Hidden mdDown>
+            <div style={{ display: "flex" }}>
+              {isHome ?
+                <>
+                  <RouterLink to="/enviar-correo">
+                    <div className="btn">
+                      Contacto
+                    </div>
+                  </RouterLink>
+                  <a
+                    href="#quienesSomos"
+                  >
+                    <div className="btn">
+                      ¿Quiénes Somos?
+                    </div>
+                  </a>
+                </> :
+                <RouterLink to="/">
+                  <div className="btn">
+                    Home
+                  </div>
+                </RouterLink>
+              }
+            </div>
+          </Hidden>
+        </Toolbar>
+      </AppBar>
 
-      <div className={`md:flex md:items-center gap-10 ${menuVisible ? 'md:flex fixed inset-y-0 right-0 bg-black bg-opacity-60 z-50 text-right' : 'hidden'}`}>
-        {isSmallScreen && (
-          <button
-            className="text-red-700 text-3xl cursor-pointer flex mt-2 justify-center"
+      <Drawer
+        anchor="right"
+        open={menuVisible}
+        onClose={toggleMenu}
+      >
+        <List sx={{ position: "relative", minWidth: "40vw", backgroundColor: "#1e1e1e", height: "100%" }}>
+          <IconButton
+            edge="start"
             onClick={toggleMenu}
+            sx={{ color: "white", maxWidth: "min-content", position: "absolute", top: 0, right: 0 }}
           >
-            <IoIosCloseCircleOutline />
-          </button>
-        )}
-
-        <div className={`md:flex md:items-end md:gap-5 md:p-0 ${menuVisible ? 'p-5 flex flex-col' : 'hidden'}`}>
+            <CloseIcon />
+          </IconButton>
           {isHome && (
             <>
-              {isSmallScreen ? (
-                <a
-                  href="#quienesSomos"
-                  className="text-white text-1xl"
-                >
+              <a
+                href="#quienesSomos"
+              >
+                <ListItem sx={{ marginTop: "2rem", color: "white" }}>
                   ¿Quiénes Somos?
-                </a>
-              ) : (
-                <Link
-                  to="/enviar-correo"
-                  className="btn mr-3"
-                >
+                </ListItem>
+              </a>
+              <RouterLink to="/enviar-correo">
+                <ListItem sx={{ color: "white" }}>
                   Contacto
-                </Link>
-              )}
-
-              {isSmallScreen ? (
-                <Link
-                  to="/enviar-correo"
-                  className="text-white text-1xl mt-3"
-                >
-                  Contacto
-                </Link>
-              ) : (
-                <a
-                  href="#quienesSomos"
-                  className="btn"
-                >
-                  ¿Quiénes Somos?
-                </a>
-              )}
+                </ListItem>
+              </RouterLink>
             </>
           )}
-
           {isFormulario && (
-            <>
-              {isSmallScreen ? (
-                <Link
-                  to="/"
-                  className="text-white text-2xl"
-                >
-                  <IoHomeOutline />
-                </Link>
-              ) : (
-                <Link
-                  to="/"
-                  className="btn"
-                >
-                  Home
-                </Link>
-              )}
-            </>
+            <ListItem sx={{ marginTop: "2rem", color: "white" }}>
+              <RouterLink to="/">
+                Home
+              </RouterLink>
+            </ListItem>
           )}
-        </div>
-      </div>
+        </List>
+      </Drawer>
     </div>
-  )
+  );
 }
