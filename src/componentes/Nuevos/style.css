@@ -15,13 +15,15 @@
     outline: none;
 }
 
-#fifthz, .btn {
+#fifthz,
+.btn {
     overflow: hidden;
     border: 1px solid green;
     transition: all .5s ease-in-out;
 }
 
-#fifthz:before, .btn:before {
+#fifthz:before,
+.btn:before {
     content: " ";
     display: block;
     width: 200px;
@@ -34,7 +36,8 @@
     transition: all .5s ease-in-out;
 }
 
-#fifthz:hover:before , .btn:hover:before {
+#fifthz:hover:before,
+.btn:hover:before {
     margin-left: 300%;
 }
 
@@ -53,6 +56,22 @@
     border-radius: 35px;
 }
 
-.btn:hover{
+.btn:hover {
     border: 2px solid white;
+}
+
+.HomeBgImage {
+    background: linear-gradient(180deg,
+            rgba(0, 0, 0, 0.4) 0%,
+            rgba(0, 0, 0, 0.1) 50%,
+            rgba(0, 0, 0, 0.4) 100%),
+        url('Fondos/Imagen1.jpg') lightgray 50% / cover no-repeat;
+    height: 100vh;
+    width: 100%;
+}
+
+@media (max-width:767px) {
+    .HomeBgImage {
+        height: 15rem;
+    }
 }

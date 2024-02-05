@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import { Alert, CircularProgress } from '@mui/material';
 import './enviar.css';
 
 export default function FormularioContacto() {
@@ -16,7 +17,17 @@ export default function FormularioContacto() {
     })
 
     const [errors, setErrors] = useState({})
-    const [mensaje, setMensaje] = useState('')
+    const [mensaje, setMensaje] = useState({ type: "hidden", msg: "" })
+    const [loading, setLoading] = useState(false)
+
+
+    useEffect(() => {
+        if (mensaje.type !== "hidden") {
+            setTimeout(() => {
+                setMensaje({ type: "hidden", msg: "" })
+            }, 5000)
+        }
+    }, [mensaje])
 
     const handleInputChange = (e) => {
         const { name, value } = e.target;
@@ -29,7 +40,7 @@ export default function FormularioContacto() {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-
+        setLoading(true)
         const newErrors = {};
         if (!formData.nombre.trim()) {
             newErrors.nombre = 'Este campo es obligatorio';
@@ -62,7 +73,7 @@ export default function FormularioContacto() {
                 });
                 if (response.ok) {
                     console.log('Correo enviado con correctamente');
-                    setMensaje('Correo enviado correctamente');
+                    setMensaje({ type: "success", msg: 'Correo enviado correctamente' });
                     setFormData({
                         nombre: '',
                         nombreEmpresa: '',
@@ -70,20 +81,15 @@ export default function FormularioContacto() {
                         email: '',
                         descripcion: '',
                     });
-                } else {
-                    console.error('Error al enviar el correo');
-                    setMensaje('Error al enviar el correo');
                 }
+                setLoading(false)
             } catch (error) {
                 console.error('Error de red:', error);
-                setMensaje('Error al enviar el correo');
+                setMensaje({ type: "error", msg: 'Error al enviar el correo' });
+                setLoading(false)
             }
         }
     }
-
-    setTimeout(() => {
-        setMensaje('')
-    }, 5000)
 
     return (
         <div className="flex flex-col items-center mt-5">
@@ -95,10 +101,10 @@ export default function FormularioContacto() {
             </div>
             <form className="rounded-3xl mt-6 border  px-10 py-8 text-white " onSubmit={handleSubmit}>
                 <div className="flex flex-col">
-                    {mensaje && (
-                        <div className='mensaje'>
-                            {mensaje}
-                        </div>
+                    {mensaje.type !== "hidden" && (
+                        <Alert className="mensaje" severity={mensaje.type}>
+                            {mensaje.msg}
+                        </Alert>
                     )}
                     <div className="flex flex-col">
                         <label>Nombre: <span className='text-red-600 font-bold'>*</span></label>
@@ -108,7 +114,7 @@ export default function FormularioContacto() {
                             value={formData.nombre}
                             onChange={handleInputChange}
                             className={`text-black rounded-md ${errors.nombre && 'border-red-500'} p-2`}
-                            placeholder="Ernesto"
+                            placeholder="Escribe tu nombre"
                             required
                         />
                         {errors.nombre && <p className="text-red-500">{errors.nombre}</p>}
@@ -167,7 +173,9 @@ export default function FormularioContacto() {
 
                     <button type='submit' className='mt-5 self-center'>
                         <div id="fifth" className="buttonBox md:w-[400px]">
-                            <span>¡Subir de Nivel!</span>
+                            {!loading ?
+                                <span>¡Subir de Nivel!</span> :
+                                <CircularProgress size={25} sx={{ color: "white" }} />}
                         </div>
                     </button>
                 </div>
