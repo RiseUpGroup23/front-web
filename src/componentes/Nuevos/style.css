@@ -65,7 +65,7 @@
             rgba(0, 0, 0, 0.4) 0%,
             rgba(0, 0, 0, 0.1) 50%,
             rgba(0, 0, 0, 0.4) 100%),
-        url('Fondos/Imagen1.jpg') lightgray 50% / cover no-repeat;
+        url('/Fondos/Imagen1.jpg') lightgray 50% / cover no-repeat;
     height: 100vh;
     width: 100%;
 }
