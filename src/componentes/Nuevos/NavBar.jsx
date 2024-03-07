@@ -53,7 +53,7 @@ export default function NavBar() {
 
           <Hidden mdDown>
             <div style={{ display: "flex" }}>
-              {isHome ?
+              {isHome && (
                 <>
                   <RouterLink to="/enviar-correo">
                     <div className="btn">
@@ -72,13 +72,36 @@ export default function NavBar() {
                       Nuestros Clientes
                     </div>
                   </RouterLink>
-                </> :
-                <RouterLink to="/">
-                  <div className="btn">
-                    Home
-                  </div>
-                </RouterLink>
-              }
+                </>
+              )}
+              {isFormulario && (
+                <>
+                  <RouterLink to="/">
+                    <div className="btn">
+                      Home
+                    </div>
+                  </RouterLink>
+                  <RouterLink to="/nuestros-clientes">
+                    <div className="btn">
+                      Nuestros Clientes
+                    </div>
+                  </RouterLink>
+                </>
+              )}
+              {isClients && (
+                <>
+                  <RouterLink to="/">
+                    <div className="btn">
+                      Home
+                    </div>
+                  </RouterLink>
+                  <RouterLink to="/enviar-correo">
+                    <div className="btn">
+                      Contacto
+                    </div>
+                  </RouterLink>
+                </>
+              )}
             </div>
           </Hidden>
         </Toolbar>
