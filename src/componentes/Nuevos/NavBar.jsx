@@ -67,11 +67,11 @@ export default function NavBar() {
                       ¿Quiénes Somos?
                     </div>
                   </a>
-                  <RouterLink to="/aviso">
+                  {/* <RouterLink to="/aviso">
                     <div className="btn">
                       Nuestros Clientes
                     </div>
-                  </RouterLink>
+                  </RouterLink> */}
                 </>
               )}
               {isFormulario && (
@@ -81,14 +81,14 @@ export default function NavBar() {
                       Home
                     </div>
                   </RouterLink>
-                  <RouterLink to="/aviso">
+                  {/* <RouterLink to="/aviso">
                     <div className="btn">
                       Nuestros Clientes
                     </div>
-                  </RouterLink>
+                  </RouterLink> */}
                 </>
               )}
-              {isClients && (
+              {/* {isClients && (
                 <>
                   <RouterLink to="/">
                     <div className="btn">
@@ -100,8 +100,8 @@ export default function NavBar() {
                       Contacto
                     </div>
                   </RouterLink>
-                </>
-              )}
+                </> */}
+              {/* )} */}
             </div>
           </Hidden>
         </Toolbar>
