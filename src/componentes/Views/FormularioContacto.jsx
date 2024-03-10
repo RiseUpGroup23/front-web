@@ -1,10 +1,10 @@
 import { useState, useEffect } from 'react'
 import { Alert, CircularProgress } from '@mui/material';
 import './enviar.css';
+import Footer from '../Nuevos/Footer';
 
 export default function FormularioContacto() {
     useEffect(() => {
-        // Desplazar la página hacia arriba al renderizar el componente
         window.scrollTo(0, 0);
     }, []);
 
@@ -99,7 +99,7 @@ export default function FormularioContacto() {
             <div className="justify-center text-white text-center text-1xl mt-6 md:text-2xl lg:text-2xl font-medium">
                 Contanos sobre tu proyecto, para <br /> poder brindarte el mejor <br /> asesoramiento
             </div>
-            <form className="rounded-3xl mt-6 border  px-10 py-8 text-white " onSubmit={handleSubmit}>
+            <form className="rounded-3xl mt-6 border px-10 py-8 text-white mb-10" onSubmit={handleSubmit}>
                 <div className="flex flex-col">
                     {mensaje.type !== "hidden" && (
                         <Alert className="mensaje" severity={mensaje.type}>
@@ -180,18 +180,7 @@ export default function FormularioContacto() {
                     </button>
                 </div>
             </form>
-            <div className="bg-zinc-300 w-[100%] h-0.5 mt-10" />
-            <div className="flex w-full lg:w-[220px] gap-4 sm:gap-5 px-2 sm:px-5 md:mt-5 mt-4 justify-center">
-                <img src="Iconos/Instagram.svg" className="w-10 h-10 lg:w-12 lg:h-12 cursor-pointer" />
-                <img src="Iconos/LinkedIn.svg" className="w-10 h-10 lg:w-12 lg:h-12 cursor-pointer" />
-                <img src="Iconos/Facebook.svg" className="w-10 h-10 lg:w-12 lg:h-12 cursor-pointer" />
-            </div>
-            <div>
-                <img src="LogoRiseUp/Logo.png" className="w-[100px] lg:w-[150px]" />
-            </div>
-            <div className="text-white text-xl sm:text-2xl lg:text-2xl font-light">
-                Copyright © 2024 RiseUp inc.
-            </div>
+            <Footer/>
         </div>
     )
 }

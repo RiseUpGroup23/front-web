@@ -29,7 +29,7 @@ export default function NavBar() {
   useEffect(() => {
     setIsHome(location.pathname === "/");
     setIsFormulario(location.pathname === "/enviar-correo");
-    setIsClients(location.pathname === "/nuestros-clientes");
+    setIsClients(location.pathname === "/aviso");
   }, [location])
 
   return (
@@ -67,7 +67,7 @@ export default function NavBar() {
                       ¿Quiénes Somos?
                     </div>
                   </a>
-                  <RouterLink to="/nuestros-clientes">
+                  <RouterLink to="/aviso">
                     <div className="btn">
                       Nuestros Clientes
                     </div>
@@ -81,7 +81,7 @@ export default function NavBar() {
                       Home
                     </div>
                   </RouterLink>
-                  <RouterLink to="/nuestros-clientes">
+                  <RouterLink to="/aviso">
                     <div className="btn">
                       Nuestros Clientes
                     </div>
@@ -129,7 +129,7 @@ export default function NavBar() {
                   ¿Quiénes Somos?
                 </ListItem>
               </a>
-              <RouterLink to="/nuestros-clientes">
+              <RouterLink to="/aviso">
                 <ListItem sx={{ color: "white" }}>
                   Nuestros Clientes
                 </ListItem>
@@ -148,7 +148,7 @@ export default function NavBar() {
                   Home
                 </ListItem>
               </RouterLink>
-              <RouterLink to="/nuestros-clientes">
+              <RouterLink to="/aviso">
                 <ListItem sx={{ color: "white" }}>
                   Nuestros Clientes
                 </ListItem>
