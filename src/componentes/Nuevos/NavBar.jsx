@@ -129,11 +129,11 @@ export default function NavBar() {
                   ¿Quiénes Somos?
                 </ListItem>
               </a>
-              <RouterLink to="/aviso">
+              {/* <RouterLink to="/aviso">
                 <ListItem sx={{ color: "white" }}>
                   Nuestros Clientes
                 </ListItem>
-              </RouterLink>
+              </RouterLink> */}
               <RouterLink to="/enviar-correo">
                 <ListItem sx={{ color: "white" }}>
                   Contacto
@@ -148,11 +148,11 @@ export default function NavBar() {
                   Home
                 </ListItem>
               </RouterLink>
-              <RouterLink to="/aviso">
+              {/* <RouterLink to="/aviso">
                 <ListItem sx={{ color: "white" }}>
                   Nuestros Clientes
                 </ListItem>
-              </RouterLink>
+              </RouterLink> */}
             </>
           )}
           {isClients && (
