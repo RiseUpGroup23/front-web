@@ -1,7 +1,11 @@
+import ContenedorTarjeta from "../Cliente/ContenedorTarjetas"
+// import Tarjeta from "../Cliente/Tarjeta"
+
 export default function Clientes() {
     return (
         <div>
-            <h1>Aquí se mostrarán nuestros clientes</h1>
+            {/* <Tarjeta/> */}
+            <ContenedorTarjeta/>
         </div>
     )
 }

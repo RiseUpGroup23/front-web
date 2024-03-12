@@ -29,7 +29,7 @@ export default function NavBar() {
   useEffect(() => {
     setIsHome(location.pathname === "/");
     setIsFormulario(location.pathname === "/enviar-correo");
-    setIsClients(location.pathname === "/aviso");
+    setIsClients(location.pathname === "/nuestros-clientes");
   }, [location])
 
   return (
@@ -67,11 +67,11 @@ export default function NavBar() {
                       ¿Quiénes Somos?
                     </div>
                   </a>
-                  {/* <RouterLink to="/aviso">
+                  <RouterLink to="/nuestros-clientes">
                     <div className="btn">
                       Nuestros Clientes
                     </div>
-                  </RouterLink> */}
+                  </RouterLink>
                 </>
               )}
               {isFormulario && (
@@ -81,14 +81,14 @@ export default function NavBar() {
                       Home
                     </div>
                   </RouterLink>
-                  {/* <RouterLink to="/aviso">
+                  <RouterLink to="/nuestros-clientes">
                     <div className="btn">
                       Nuestros Clientes
                     </div>
-                  </RouterLink> */}
+                  </RouterLink>
                 </>
               )}
-              {/* {isClients && (
+              {isClients && (
                 <>
                   <RouterLink to="/">
                     <div className="btn">
@@ -100,8 +100,8 @@ export default function NavBar() {
                       Contacto
                     </div>
                   </RouterLink>
-                </> */}
-              {/* )} */}
+                </>
+              )}
             </div>
           </Hidden>
         </Toolbar>
@@ -129,11 +129,11 @@ export default function NavBar() {
                   ¿Quiénes Somos?
                 </ListItem>
               </a>
-              {/* <RouterLink to="/aviso">
+              <RouterLink to="/nuestros-clientes">
                 <ListItem sx={{ color: "white" }}>
                   Nuestros Clientes
                 </ListItem>
-              </RouterLink> */}
+              </RouterLink>
               <RouterLink to="/enviar-correo">
                 <ListItem sx={{ color: "white" }}>
                   Contacto
@@ -148,11 +148,11 @@ export default function NavBar() {
                   Home
                 </ListItem>
               </RouterLink>
-              {/* <RouterLink to="/aviso">
+              <RouterLink to="/nuestros-clientes">
                 <ListItem sx={{ color: "white" }}>
                   Nuestros Clientes
                 </ListItem>
-              </RouterLink> */}
+              </RouterLink>
             </>
           )}
           {isClients && (
