@@ -1,11 +1,13 @@
 import ContenedorTarjeta from "../Cliente/ContenedorTarjetas"
-// import Tarjeta from "../Cliente/Tarjeta"
+import Footer from "../Landing/Footer"
 
 export default function Clientes() {
     return (
         <div>
-            {/* <Tarjeta/> */}
-            <ContenedorTarjeta/>
+            <ContenedorTarjeta />
+            <div style={{ display: "grid", minHeight: "30vh", gridTemplateRows: "1fr auto" }}>
+                <Footer />
+            </div>
         </div>
     )
 }
