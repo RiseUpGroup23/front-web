@@ -85,7 +85,7 @@ export default function NavBar() {
                 <>
                   <RouterLink to="/">
                     <div className="btn">
-                      Home
+                      Inicio
                     </div>
                   </RouterLink>
                   <RouterLink to="/servicios">
@@ -104,7 +104,7 @@ export default function NavBar() {
                 <>
                   <RouterLink to="/">
                     <div className="btn">
-                      Home
+                      Inicio
                     </div>
                   </RouterLink>
                   <RouterLink to="/enviar-correo">
@@ -123,7 +123,7 @@ export default function NavBar() {
                 <>
                   <RouterLink to="/">
                     <div className="btn">
-                      Home
+                      Inicio
                     </div>
                   </RouterLink>
                   <RouterLink to="/enviar-correo">
@@ -186,7 +186,7 @@ export default function NavBar() {
             <>
               <RouterLink to="/">
                 <ListItem sx={{ marginTop: "2rem", color: "white" }}>
-                  Home
+                  Inicio
                 </ListItem>
               </RouterLink>
               <RouterLink to="/nuestros-clientes">
@@ -205,7 +205,7 @@ export default function NavBar() {
             <>
               <RouterLink to="/">
                 <ListItem sx={{ marginTop: "2rem", color: "white" }}>
-                  Home
+                  Inicio
                 </ListItem>
               </RouterLink>
               <RouterLink to="/enviar-correo">
@@ -224,7 +224,7 @@ export default function NavBar() {
             <>
               <RouterLink to="/">
                 <ListItem sx={{ marginTop: "2rem", color: "white" }}>
-                  Home
+                  Inicio
                 </ListItem>
               </RouterLink>
               <RouterLink to="/enviar-correo">

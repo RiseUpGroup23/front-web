@@ -19,9 +19,9 @@ export default function Footer() {
         <a href="#inicio">
           <img src="LogoRiseUp/Logo.png" className="w-[100px] lg:w-[150px] mt-2" />
         </a>
-        <div className="text-white text-xl sm:text-2xl lg:text-4xl font-light">
+        {/* <div className="text-white text-xl sm:text-2xl lg:text-4xl font-light">
           Copyright © 2024 RiseUp inc.
-        </div>
+        </div> */}
       </div>
     </div>
   );
