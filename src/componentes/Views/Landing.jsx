@@ -1,3 +1,4 @@
+import Clientes from "../Landing/Clientes"
 import Contacto from "../Landing/Contacto"
 import Preguntas from "../Landing/Preguntas"
 import Principal from "../Landing/Principal"
@@ -8,6 +9,7 @@ export default function Landing() {
         <div>
             <Principal />
             <Preguntas />
+            {/* <Clientes/> */}
             <Servicios />
             <Contacto />
         </div>

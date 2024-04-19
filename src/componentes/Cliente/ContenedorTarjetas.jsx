@@ -9,7 +9,6 @@ export default function ContenedorTarjeta() {
 
     return (
         <div>
-
             <div className="galeria">
                 {TarjetaData.map((card, index) => (
                     <Tarjeta key={index} nombre={card.nombre} imagen={card.imagen} link={card.link} />
