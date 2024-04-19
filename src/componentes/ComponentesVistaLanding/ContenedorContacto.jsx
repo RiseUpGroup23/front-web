@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom"
-import Footer from "./Footer"
+import Footer from "../Reutilizables/Footer"
 
-export default function Contacto() {
+export default function ContenedorContacto() {
 
   return (
     <>

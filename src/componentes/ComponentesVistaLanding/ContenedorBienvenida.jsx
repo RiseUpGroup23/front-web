@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom'
 import './style.css'
 
-export default function Principal() {
+export default function ContenedorBienvenida() {
   return (
     <div id='inicio' className='relative flex items-center flex-col'>
       <div className='HomeBgImage'></div>

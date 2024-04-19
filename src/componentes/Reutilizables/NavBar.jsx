@@ -12,7 +12,7 @@ import {
 import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
 
-import './style.css';
+import '../ComponentesVistaLanding/style.css';
 import { useEffect } from "react";
 
 export default function NavBar() {

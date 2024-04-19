@@ -1,4 +1,4 @@
-import Tarjeta from "./Tarjeta";
+import Tarjeta from "./TarjetaCliente";
 import "../../../public/Fondos/Imagen4.jpg"
 
 export default function ContenedorTarjeta() {

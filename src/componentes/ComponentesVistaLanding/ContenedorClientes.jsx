@@ -1,4 +1,4 @@
-export default function Clientes() {
+export default function ContenedorClientes() {
     return (
         <div>
             <div className="bg-zinc-300 w-full h-0.5" />

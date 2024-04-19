@@ -1,4 +1,4 @@
-import Footer from "../Landing/Footer";
+import Footer from "../componentes/Reutilizables/Footer";
 
 export default function Servicios() {
     return (

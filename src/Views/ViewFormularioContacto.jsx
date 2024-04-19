@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import { Alert, CircularProgress } from '@mui/material';
 import './enviar.css';
-import Footer from '../Landing/Footer';
+import Footer from '../componentes/Reutilizables/Footer';
 
 export default function FormularioContacto() {
     useEffect(() => {

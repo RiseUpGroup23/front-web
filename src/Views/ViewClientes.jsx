@@ -1,5 +1,5 @@
-import ContenedorTarjeta from "../Cliente/ContenedorTarjetas"
-import Footer from "../Landing/Footer"
+import ContenedorTarjeta from "../componentes/ComponentesVistaCliente/ContenedorTarjetasClientes"
+import Footer from "../componentes/Reutilizables/Footer"
 
 export default function Clientes() {
     return (
