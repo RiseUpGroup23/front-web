@@ -1,4 +1,4 @@
-import ContenedorClientes from "../componentes/ComponentesVistaLanding/ContenedorClientes"
+import ContenedorClientes from "../componentes/ComponentesVistaLanding/ContenedorClientes/ContenedorClientes"
 import ContenedorContacto from "../componentes/ComponentesVistaLanding/ContenedorContacto"
 import ContenedorPreguntas from "../componentes/ComponentesVistaLanding/ContenedorPreguntas"
 import ContenedorBienvenida from "../componentes/ComponentesVistaLanding/ContenedorBienvenida"
