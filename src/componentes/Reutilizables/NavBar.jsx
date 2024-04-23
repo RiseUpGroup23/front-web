@@ -21,6 +21,7 @@ export default function NavBar() {
   const [isFormulario, setIsFormulario] = useState(location.pathname === "/enviar-correo");
   const [isClients, setIsClients] = useState(location.pathname === "/nuestros-clientes");
   const [isServices, setIsServices] = useState(location.pathname === "/servicios");
+  const [isClientes, setIsClientes] = useState(location.pathname === "/clientes");
   const [menuVisible, setMenuVisible] = useState(false);
 
   const toggleMenu = () => {
@@ -32,6 +33,7 @@ export default function NavBar() {
     setIsFormulario(location.pathname === "/enviar-correo");
     setIsClients(location.pathname === "/nuestros-clientes");
     setIsServices(location.pathname === "/servicios");
+    setIsClientes(location.pathname === "/clientes");
   }, [location])
 
   return (
@@ -138,6 +140,30 @@ export default function NavBar() {
                   </RouterLink>
                 </>
               )}
+              {isClientes && (
+                <>
+                  <RouterLink to="/">
+                    <div className="btn">
+                      Inicio
+                    </div>
+                  </RouterLink>
+                  <RouterLink to="/enviar-correo">
+                    <div className="btn">
+                      Contacto
+                    </div>
+                  </RouterLink>
+                  <RouterLink to="/servicios">
+                    <div className="btn">
+                      Servicios
+                    </div>
+                  </RouterLink>
+                  <RouterLink to="/nuestros-clientes">
+                    <div className="btn">
+                      Nuestros Clientes
+                    </div>
+                  </RouterLink>
+                </>
+              )}
             </div>
           </Hidden>
         </Toolbar>
@@ -235,6 +261,30 @@ export default function NavBar() {
               <RouterLink to="/nuestros-clientes">
                 <ListItem sx={{ color: "white" }}>
                   Nuestros Clientes
+                </ListItem>
+              </RouterLink>
+            </>
+          )}
+          {isClientes && (
+            <>
+              <RouterLink to="/">
+                <ListItem sx={{ marginTop: "2rem", color: "white" }}>
+                  Inicio
+                </ListItem>
+              </RouterLink>
+              <RouterLink to="/enviar-correo">
+                <ListItem sx={{ color: "white" }}>
+                  Contacto
+                </ListItem>
+              </RouterLink>
+              <RouterLink to="/nuestros-clientes">
+                <ListItem sx={{ color: "white" }}>
+                  Nuestros Clientes
+                </ListItem>
+              </RouterLink>
+              <RouterLink to="/servicios">
+                <ListItem sx={{ color: "white" }}>
+                  Nuestros Servicios
                 </ListItem>
               </RouterLink>
             </>

@@ -1,4 +1,4 @@
-import { Landing, FormularioContacto, Clientes, Servicios } from "./Views/index"
+import { Landing, FormularioContacto, Clientes, Servicios, DetalleCliente } from "./Views/index"
 import { Route, Routes } from "react-router-dom"
 import NavBar from "./componentes/Reutilizables/NavBar"
 
@@ -11,6 +11,7 @@ export default function App() {
         <Route exact path="/enviar-correo" element={<FormularioContacto />} />
         <Route exact path="/nuestros-clientes" element={<Clientes />} />
         <Route exact path="/servicios" element={<Servicios />} />
+        <Route exact path="/clientes" element={<DetalleCliente/>}/>
       </Routes>
     </div>
   )

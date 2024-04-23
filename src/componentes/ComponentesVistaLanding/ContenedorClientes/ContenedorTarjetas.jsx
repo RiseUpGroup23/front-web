@@ -1,16 +1,16 @@
 import TarjetaCliente from "./TarjetaCliente";
+import { Link } from "react-router-dom";
 import "./stylesContenedorClientes.css";
 
 export default function ContenedorTarjetas() {
-    const Clientes = [
-        { nombreCliente: 'NeoSalud Centro Neuropsicológico', imagenCliente: "../../../../public/Clientes/Neo.png" },
-        { nombreCliente: 'NeoSalud Centro Neuropsicológico', imagenCliente: "../../../../public/Clientes/Neo.png" },
-        { nombreCliente: 'NeoSalud Centro Neuropsicológico', imagenCliente: "../../../../public/Clientes/Neo.png" },
-        { nombreCliente: 'NeoSalud Centro Neuropsicológico', imagenCliente: "../../../../public/Clientes/Neo.png" },
-    ]
+    const clientes = [
+        { nombreCliente: 'NeoSalud Centro Neuropsicológico', imagenCliente: "/Clientes/Neo.png" },
+        { nombreCliente: 'Rama Store', imagenCliente: "/Clientes/Ramas.png" },
+    ];
+
     return (
         <div className="galeriaClientes">
-            {Clientes.map((cliente, index) => (
+            {clientes.map((cliente, index) => (
                 <TarjetaCliente key={index} nombreCliente={cliente.nombreCliente} imagenCliente={cliente.imagenCliente}/>
             ))}
         </div>

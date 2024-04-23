@@ -1,26 +1,25 @@
 .galeriaClientes {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between; /* Cambiado a space-between para que haya espacio entre las tarjetas */
+    justify-content: space-between;
     width: 80%;
-    margin: 10px auto; /* Margen superior e inferior de 10px y centrado horizontal */
-    max-width: 70%; /* Ajuste opcional para limitar el ancho máximo de la galería */
+    margin: 10px auto;
+    max-width: 70%; 
     gap: 10px;
 }
 
-/* Estilos para cada tarjeta de cliente */
 .cliente {
     position: relative;
     width: calc(50% - 10px); /* El 50% del ancho menos el espacio entre tarjetas */
-    max-width: 400px; /* Máximo ancho de la tarjeta */
+    max-width: 400px;
     height: fit-content;
-    margin-bottom: 20px; /* Espacio entre filas */
+    margin-bottom: 20px; 
     cursor: pointer;
     transition: transform 0.3s ease;
 }
 
 .cliente:hover {
-    transform: scale(1.03);
+    transform: scale(1.09);
 }
 
 .cliente img {
@@ -33,11 +32,11 @@
     position: absolute;
     width: 100%;
     text-align: center;
+    font-weight: bold;
     background-color: rgba(0, 0, 0, 0.5);
     color: white;
     padding: 5px;
     box-sizing: border-box;
-    border-radius: 10px;
     top: 50%;
     transform: translateY(-50%);
 }
