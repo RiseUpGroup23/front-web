@@ -1,19 +1,13 @@
 import Tarjeta from "./TarjetaCliente";
 import "../../../public/Fondos/Imagen4.jpg"
+import clientesData from "../../Views/DetallesClientes/clientesData";
 
 export default function ContenedorTarjeta() {
-    const TarjetaData = [
-        { nombre: 'Centro Neuropsicologico', imagen: '../../../public/Clientes/Neo.png', link: "https://portafolio-ernesto-aguirre.netlify.app/#inicio" },
-        { nombre: 'Rama Store', imagen: '../../../public/Clientes/Ramas.png', link: "https://portafolio-ernesto-aguirre.netlify.app/#inicio" },
-    ]
-
     return (
-        <div>
-            <div className="galeria">
-                {TarjetaData.map((card, index) => (
-                    <Tarjeta key={index} nombre={card.nombre} imagen={card.imagen} link={card.link} />
-                ))}
-            </div>
+        <div className="galeria">
+            {clientesData.map((cliente, index) => (
+                <Tarjeta key={index} name={cliente.name} img={cliente.img} link={cliente.link} />
+            ))}
         </div>
     )
 }

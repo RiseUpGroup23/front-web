@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import "./stylesContenedorClientes.css";
 
 export default function TarjetaCliente({ name, img }) {
-    // const clienteURL = encodeURIComponent(nombreCliente); 
 
     return (
         <Link to={`/clientes/${encodeURIComponent(name)}`}  className="cliente">

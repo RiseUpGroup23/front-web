@@ -1,19 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import Footer from "../../componentes/Reutilizables/Footer";
 import clientesData from "./clientesData";
 import { useParams } from "react-router-dom";
 import "./ViewDetalleCliente.css";
 
 export default function DetalleCliente() {
     const { name } = useParams();
-
-    // Buscar el cliente en clientesData por el name proporcionado en la URL
     const cliente = clientesData.find(cliente => cliente.name === name);
-
-    if (!cliente) {
-        return <div>Cliente no encontrado</div>;
-    }
-
     const { img, description, link } = cliente;
 
     return (
@@ -33,20 +27,22 @@ export default function DetalleCliente() {
                 <div className="flex flex-col items-center">
                     <div className="flex w-full lg:w-[220px] gap-4 sm:gap-5 px-2 sm:px-5 md:mt-10 mt-4 justify-center">
                         <Link to="/aviso">
-                            <img src="Iconos/Instagram.svg" className="w-10 h-10 lg:w-12 lg:h-12 cursor-pointer" />
+                            <img src="/Iconos/Instagram.svg" className="w-10 h-10 lg:w-12 lg:h-12 cursor-pointer" />
                         </Link>
                         <Link to="/aviso">
-                            <img src="Iconos/LinkedIn.svg" className="w-10 h-10 lg:w-12 lg:h-12 cursor-pointer" />
+                            <img src="/Iconos/LinkedIn.svg" className="w-10 h-10 lg:w-12 lg:h-12 cursor-pointer" />
                         </Link>
                         <Link to="/aviso">
-                            <img src="Iconos/Facebook.svg" className="w-10 h-10 lg:w-12 lg:h-12 cursor-pointer" />
+                            <img src="/Iconos/Facebook.svg" className="w-10 h-10 lg:w-12 lg:h-12 cursor-pointer" />
                         </Link>
                     </div>
                     <a href="#inicio">
-                        <img src="LogoRiseUp/Logo.png" className="w-[100px] lg:w-[150px] mt-2" />
+                        <img src="/LogoRiseUp/Logo.png" className="w-[100px] lg:w-[150px] mt-2" />
                     </a>
                 </div>
             </div>
+
+            {/* <Footer/> */}
         </div>
     )
 };
