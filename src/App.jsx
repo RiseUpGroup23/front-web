@@ -11,7 +11,7 @@ export default function App() {
         <Route exact path="/enviar-correo" element={<FormularioContacto />} />
         <Route exact path="/nuestros-clientes" element={<Clientes />} />
         <Route exact path="/servicios" element={<Servicios />} />
-        <Route exact path="/clientes" element={<DetalleCliente/>}/>
+        <Route exact path="/clientes/:name" element={<DetalleCliente/>}/>
       </Routes>
     </div>
   )

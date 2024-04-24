@@ -2,15 +2,15 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "./stylesContenedorClientes.css";
 
-export default function TarjetaCliente({ nombreCliente, imagenCliente }) {
-    const clienteURL = encodeURIComponent(nombreCliente); // Codificar el nombre del cliente para usarlo en la URL
+export default function TarjetaCliente({ name, img }) {
+    // const clienteURL = encodeURIComponent(nombreCliente); 
 
     return (
-        <Link to={`/nuestros-clientes/${clienteURL}`} className="cliente">
+        <Link to={`/clientes/${encodeURIComponent(name)}`}  className="cliente">
             <div className="nombreCliente">
-                <h3>{nombreCliente}</h3>
+                <h3>{name}</h3>
             </div>
-            <img src={imagenCliente} alt={nombreCliente} />
+            <img src={img} alt={name} />
         </Link>
     );
 }

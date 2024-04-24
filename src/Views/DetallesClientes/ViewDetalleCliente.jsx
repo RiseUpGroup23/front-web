@@ -1,46 +1,35 @@
 import React from "react";
-import Footer from "../../componentes/Reutilizables/Footer";
 import { Link } from "react-router-dom";
+import clientesData from "./clientesData";
+import { useParams } from "react-router-dom";
 import "./ViewDetalleCliente.css";
-// import Tarjeta from "../../componentes/ComponentesVistaLanding/ContenedorServicio/TarjetaServicio";
 
 export default function DetalleCliente() {
-    // const TarjetaData = [
-    //     { nombre: 'Diseño y Desarrollo de Páginas Web', imagen: 'Iconos/Diseño y Desarrollo de Páginas Web.svg' },
-    //     { nombre: 'Automatización de Procesos', imagen: 'Iconos/Automatización de Procesos.svg' },
-    //     { nombre: 'Imagen en Redes Sociales', imagen: 'Iconos/Imagen en Redes Sociales.svg' },
-    //     { nombre: 'Terciarización de Herramientas', imagen: '/Iconos/Terciarización de Herramientas.svg' },
-    //     { nombre: 'Rebranding', imagen: 'Iconos/Rebranding.svg' },
-    //   ]
+    const { name } = useParams();
+
+    // Buscar el cliente en clientesData por el name proporcionado en la URL
+    const cliente = clientesData.find(cliente => cliente.name === name);
+
+    if (!cliente) {
+        return <div>Cliente no encontrado</div>;
+    }
+
+    const { img, description, link } = cliente;
 
     return (
         <div className="contenedorViewDetalleCliente">
-            <h1 className="nameCliente">NeoSalud Centro Neuropsicológico</h1>
-            <img src="/Clientes/Neo.png" className="imagenCliente" />
+            <h1 className="nameCliente">{name}</h1>
+            <img src={img} className="imagenCliente" />
 
-            <p className="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt totam nulla maiores deleniti nihil tempore laboriosam vero, praesentium ad mollitia quibusdam inventore ratione, cupiditate blanditiis molestiae? Nobis ipsum quo blanditiis. Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid sapiente rem, molestiae temporibus provident alias officia omnis magnam aut beatae excepturi magni quae mollitia accusantium. Aspernatur voluptatibus molestias praesentium nesciunt.</p>
+            <p className="description">{description}</p>
 
-            {/* <h2 className="servicesClients">Servicios Realizados:</h2> */}
-
-            {/* <div className="flex flex-col items-center">
-                <div className="bg-zinc-300 w-full h-0.5" />
-                <div className="justify-center text-white text-center text-4xl md:text-5xl font-medium my-10">
-                    Servicios que ofrecemos
-                </div>
-                <div className="flex flex-wrap justify-center gap-5 mx-4 sm:gap-10 mt-5">
-                    {TarjetaData.map((card, index) => (
-                        <Tarjeta key={index} nombre={card.nombre} imagen={card.imagen} />
-                    ))}
-                </div>
-            </div> */}
-
-            <div id="fifthz" className="buttonBoz md:w-[500px] md:mt-5 md:mb-5">
-                <a href="https://neosalud.org/" target="_blank">
+            <div id="fifthz" className="buttonBoz md:w-[500px] md:mt-7">
+                <a href={link} target="_blank">
                     <button className='buttonz md:text-3xl md:py-3'>Visitar su Página Web</button>
                 </a>
             </div>
 
-            <div className="bg-zinc-300 h-0.5" style={{ width: "90%", marginTop: "1%" }}>
+            <div className="bg-zinc-300 h-0.5" style={{ width: "90%", marginTop: "2%" }}>
                 <div className="flex flex-col items-center">
                     <div className="flex w-full lg:w-[220px] gap-4 sm:gap-5 px-2 sm:px-5 md:mt-10 mt-4 justify-center">
                         <Link to="/aviso">
