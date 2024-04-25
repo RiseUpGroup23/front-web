@@ -4,16 +4,17 @@
     justify-content: space-between;
     width: 80%;
     margin: 10px auto;
-    max-width: 70%; 
+    max-width: 70%;
     gap: 10px;
 }
 
 .cliente {
     position: relative;
-    width: calc(50% - 10px); /* El 50% del ancho menos el espacio entre tarjetas */
+    width: calc(50% - 10px);
+    /* El 50% del ancho menos el espacio entre tarjetas */
     max-width: 400px;
     height: fit-content;
-    margin-bottom: 20px; 
+    margin-bottom: 20px;
     cursor: pointer;
     transition: transform 0.3s ease;
 }
@@ -39,4 +40,11 @@
     box-sizing: border-box;
     top: 50%;
     transform: translateY(-50%);
+}
+
+@media (max-width:767px) {
+    .cliente {
+        width: 100%;
+        max-width: none;
+    }
 }

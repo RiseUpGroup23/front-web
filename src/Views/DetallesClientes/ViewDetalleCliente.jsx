@@ -17,9 +17,9 @@ export default function DetalleCliente() {
 
             <p className="description">{description}</p>
 
-            <div id="fifthz" className="buttonBoz md:w-[500px] md:mt-7">
+            <div id="fifthz" className="buttonBox md:w-[500px] md:mt-7 mt-3 md:mb-0 mb-3 md:text-3xl px-6">
                 <a href={link} target="_blank">
-                    <button className='buttonz md:text-3xl md:py-3'>Visitar su Página Web</button>
+                    <button>Visitar su Página Web</button>
                 </a>
             </div>
 
