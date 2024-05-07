@@ -5,7 +5,7 @@ export default function Clientes() {
     return (
         <div>
             <ContenedorTarjeta />
-            <div style={{ display: "grid", minHeight: "30vh", gridTemplateRows: "1fr auto" }}>
+            <div style={{ display: "grid", marginTop: "2%" }}>
                 <Footer />
             </div>
         </div>
