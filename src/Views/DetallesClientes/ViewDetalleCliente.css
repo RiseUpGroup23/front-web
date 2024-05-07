@@ -1,0 +1,42 @@
+.contenedorViewDetalleCliente {
+    margin-top: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.contenedorViewDetalleCliente .nameCliente {
+    color: rgba(255, 255, 255, 1);
+    font-weight: bold;
+    font-size: 28px;
+    text-align: center;
+}
+
+.contenedorViewDetalleCliente .imagenCliente {
+    width: 800px;
+    height: 400px;
+    margin-top: 1%;
+}
+
+.contenedorViewDetalleCliente .description {
+    color: rgba(255, 255, 255, 1);
+    width: 70%;
+    font-size: 20px;
+    text-align: justify;
+    margin-top: 2%;
+
+}
+
+@media (max-width: 767px) {
+    .contenedorViewDetalleCliente .imagenCliente {
+        width: 90%;
+        height: 60%;
+    }
+
+    .contenedorViewDetalleCliente .description {
+        width: 90%;
+        font-size: 18px;
+    }
+}

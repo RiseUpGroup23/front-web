@@ -1,4 +1,4 @@
-export default function Preguntas() {
+export default function ContenedorPreguntas() {
   return (
     <div className="flex flex-col items-center" id="quienesSomos">
       <div className="bg-zinc-300 w-full h-0.5" />
