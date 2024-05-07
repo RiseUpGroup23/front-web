@@ -10,7 +10,7 @@ export default function TarjetaServicios({ servicio, img, inicioP, parrafo }) {
 
     return (
         <div className="contenedorServicio">
-            <h2 className="servicioNombre">{servicio}</h2>
+            {/* <h2 className="servicioNombre">{servicio}</h2> */}
             <img className="imagenServicio" src={img} alt="" />
             <p className="descripcionServicio">
                 {inicioP}
