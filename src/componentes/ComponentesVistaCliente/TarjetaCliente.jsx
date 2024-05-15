@@ -4,16 +4,17 @@ import { Link } from "react-router-dom";
 
 export default function Tarjeta({ name, img, link }) {
     return (
-        <div className="proyecto">
-            <img src={img} />
-            <div className="overlay">
-                <Link to={`/clientes/${encodeURIComponent(name)}`}>
+        <Link to={`/clientes/${encodeURIComponent(name)}`}>
+            <div className="proyecto">
+                <img src={img} />
+                <div className="overlay">
+
                     <h3>{name}</h3>
-                </Link>
-                <div className="redes-portafolio">
-                    <a href={link} target="_blank" rel="noopener noreferrer"><i className="fa-solid fa-globe"></i></a>
+                    <div className="redes-portafolio">
+                        <i className="fa-solid fa-globe"></i>
+                    </div>
                 </div>
             </div>
-        </div>
+        </Link >
     )
 }

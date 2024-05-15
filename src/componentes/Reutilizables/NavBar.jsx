@@ -38,7 +38,7 @@ export default function NavBar() {
 
   return (
     <div>
-      <AppBar position="static" sx={{ backgroundColor: "black" }}>
+      <AppBar position="static" sx={{ backgroundColor: "#151515" }}>
         <Toolbar sx={{ display: "flex", justifyContent: "space-between" }}>
           <RouterLink to="/">
             <img
