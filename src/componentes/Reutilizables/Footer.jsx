@@ -9,7 +9,7 @@ export default function Footer() {
           <a href="https://www.linkedin.com/company/riseuptuc/" target="_blank">
             <img src="Iconos/LinkedIn.svg" className="w-10 h-10 lg:w-12 lg:h-12 cursor-pointer" />
           </a>
-          <a href="https://www.facebook.com/profile.php?id=61556582908815" target="_blank">
+          <a href="https://www.facebook.com/profile.php?id=61559591309018&mibextid=ZbWKwL" target="_blank">
             <img src="Iconos/Facebook.svg" className="w-10 h-10 lg:w-12 lg:h-12 cursor-pointer" />
           </a>
         </div>
