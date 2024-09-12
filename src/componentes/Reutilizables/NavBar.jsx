@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link as RouterLink, useLocation } from "react-router-dom";
+import { Link as RouterLink } from "react-router-dom";
 import {
   AppBar,
   Toolbar,
@@ -13,28 +13,22 @@ import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
 
 import '../ComponentesVistaLanding/style.css';
-import { useEffect } from "react";
+
+const menuItems = [
+  { text: "Inicio", to: "/" },
+  { text: "Contacto", to: "/enviar-correo" },
+  { text: "¿Quiénes Somos?", to: "/#quienesSomos" },
+  { text: "Servicios", to: "/servicios" },
+  { text: "Nuestros Clientes", to: "/nuestros-clientes" },
+  { text: "QuickPlanner", to: "/quickplanner" },
+]
 
 export default function NavBar() {
-  const location = useLocation();
-  const [isHome, setIsHome] = useState(location.pathname === "/");
-  const [isFormulario, setIsFormulario] = useState(location.pathname === "/enviar-correo");
-  const [isClients, setIsClients] = useState(location.pathname === "/nuestros-clientes");
-  const [isServices, setIsServices] = useState(location.pathname === "/servicios");
-  const [isClientes, setIsClientes] = useState(location.pathname.startsWith("/clientes"));
   const [menuVisible, setMenuVisible] = useState(false);
 
   const toggleMenu = () => {
     setMenuVisible(!menuVisible);
   };
-
-  useEffect(() => {
-    setIsHome(location.pathname === "/");
-    setIsFormulario(location.pathname === "/enviar-correo");
-    setIsClients(location.pathname === "/nuestros-clientes");
-    setIsServices(location.pathname === "/servicios");
-    setIsClientes(location.pathname.startsWith("/clientes"));
-  }, [location])
 
   return (
     <div>
@@ -45,7 +39,7 @@ export default function NavBar() {
               src="LogoRiseUp/Logo.png" className="object-contain w-[125px]  mt-1 cursor-pointer" style={{ maxWidth: "unset" }}
             />
           </RouterLink>
-          <Hidden mdUp>
+          <Hidden lgUp>
             {!menuVisible && <IconButton
               edge="start"
               onClick={toggleMenu}
@@ -55,115 +49,15 @@ export default function NavBar() {
             </IconButton>}
           </Hidden>
 
-          <Hidden mdDown>
+          <Hidden lgDown>
             <div style={{ display: "flex" }}>
-              {isHome && (
-                <>
-                  <RouterLink to="/enviar-correo">
-                    <div className="btn">
-                      Contacto
-                    </div>
+              <>
+                {menuItems.map((item, index) => (
+                  <RouterLink to={item.to} key={index}>
+                    <div className="btn">{item.text}</div>
                   </RouterLink>
-                  <a
-                    href="#quienesSomos"
-                  >
-                    <div className="btn">
-                      ¿Quiénes Somos?
-                    </div>
-                  </a>
-                  <RouterLink to="/servicios">
-                    <div className="btn">
-                      Servicios
-                    </div>
-                  </RouterLink>
-                  <RouterLink to="/nuestros-clientes">
-                    <div className="btn">
-                      Nuestros Clientes
-                    </div>
-                  </RouterLink>
-                </>
-              )}
-              {isFormulario && (
-                <>
-                  <RouterLink to="/">
-                    <div className="btn">
-                      Inicio
-                    </div>
-                  </RouterLink>
-                  <RouterLink to="/servicios">
-                    <div className="btn">
-                      Servicios
-                    </div>
-                  </RouterLink>
-                  <RouterLink to="/nuestros-clientes">
-                    <div className="btn">
-                      Nuestros Clientes
-                    </div>
-                  </RouterLink>
-                </>
-              )}
-              {isClients && (
-                <>
-                  <RouterLink to="/">
-                    <div className="btn">
-                      Inicio
-                    </div>
-                  </RouterLink>
-                  <RouterLink to="/enviar-correo">
-                    <div className="btn">
-                      Contacto
-                    </div>
-                  </RouterLink>
-                  <RouterLink to="/servicios">
-                    <div className="btn">
-                      Servicios
-                    </div>
-                  </RouterLink>
-                </>
-              )}
-              {isServices && (
-                <>
-                  <RouterLink to="/">
-                    <div className="btn">
-                      Inicio
-                    </div>
-                  </RouterLink>
-                  <RouterLink to="/enviar-correo">
-                    <div className="btn">
-                      Contacto
-                    </div>
-                  </RouterLink>
-                  <RouterLink to="/nuestros-clientes">
-                    <div className="btn">
-                      Nuestros Clientes
-                    </div>
-                  </RouterLink>
-                </>
-              )}
-              {isClientes && (
-                <>
-                  <RouterLink to="/">
-                    <div className="btn">
-                      Inicio
-                    </div>
-                  </RouterLink>
-                  <RouterLink to="/enviar-correo">
-                    <div className="btn">
-                      Contacto
-                    </div>
-                  </RouterLink>
-                  <RouterLink to="/servicios">
-                    <div className="btn">
-                      Servicios
-                    </div>
-                  </RouterLink>
-                  <RouterLink to="/nuestros-clientes">
-                    <div className="btn">
-                      Nuestros Clientes
-                    </div>
-                  </RouterLink>
-                </>
-              )}
+                ))}
+              </>
             </div>
           </Hidden>
         </Toolbar>
@@ -182,113 +76,15 @@ export default function NavBar() {
           >
             <CloseIcon />
           </IconButton>
-          {isHome && (
-            <>
-              <a
-                href="#quienesSomos"
-              >
-                <ListItem sx={{ marginTop: "2rem", color: "white" }}>
-                  ¿Quiénes Somos?
-                </ListItem>
-              </a>
-              <RouterLink to="/servicios">
-                <ListItem sx={{ color: "white" }}>
-                  Nuestros Servicios
+          <>
+            {menuItems.map((item, index) => (
+              <RouterLink to={item.to} key={index}>
+                <ListItem sx={{ marginTop: `${index === 0 ? "2rem" : "0"}`, color: "white" }}>
+                  {item.text}
                 </ListItem>
               </RouterLink>
-              <RouterLink to="/nuestros-clientes">
-                <ListItem sx={{ color: "white" }}>
-                  Nuestros Clientes
-                </ListItem>
-              </RouterLink>
-              <RouterLink to="/enviar-correo">
-                <ListItem sx={{ color: "white" }}>
-                  Contacto
-                </ListItem>
-              </RouterLink>
-            </>
-          )}
-          {isFormulario && (
-            <>
-              <RouterLink to="/">
-                <ListItem sx={{ marginTop: "2rem", color: "white" }}>
-                  Inicio
-                </ListItem>
-              </RouterLink>
-              <RouterLink to="/nuestros-clientes">
-                <ListItem sx={{ color: "white" }}>
-                  Nuestros Clientes
-                </ListItem>
-              </RouterLink>
-              <RouterLink to="/servicios">
-                <ListItem sx={{ color: "white" }}>
-                  Nuestros Servicios
-                </ListItem>
-              </RouterLink>
-            </>
-          )}
-          {isClients && (
-            <>
-              <RouterLink to="/">
-                <ListItem sx={{ marginTop: "2rem", color: "white" }}>
-                  Inicio
-                </ListItem>
-              </RouterLink>
-              <RouterLink to="/enviar-correo">
-                <ListItem sx={{ color: "white" }}>
-                  Contacto
-                </ListItem>
-              </RouterLink>
-              <RouterLink to="/servicios">
-                <ListItem sx={{ color: "white" }}>
-                  Nuestros Servicios
-                </ListItem>
-              </RouterLink>
-            </>
-          )}
-          {isServices && (
-            <>
-              <RouterLink to="/">
-                <ListItem sx={{ marginTop: "2rem", color: "white" }}>
-                  Inicio
-                </ListItem>
-              </RouterLink>
-              <RouterLink to="/enviar-correo">
-                <ListItem sx={{ color: "white" }}>
-                  Contacto
-                </ListItem>
-              </RouterLink>
-              <RouterLink to="/nuestros-clientes">
-                <ListItem sx={{ color: "white" }}>
-                  Nuestros Clientes
-                </ListItem>
-              </RouterLink>
-            </>
-          )}
-          {isClientes && (
-            <>
-              <RouterLink to="/">
-                <ListItem sx={{ marginTop: "2rem", color: "white" }}>
-                  Inicio
-                </ListItem>
-              </RouterLink>
-              <RouterLink to="/enviar-correo">
-                <ListItem sx={{ color: "white" }}>
-                  Contacto
-                </ListItem>
-              </RouterLink>
-              <RouterLink to="/nuestros-clientes">
-                <ListItem sx={{ color: "white" }}>
-                  Nuestros Clientes
-                </ListItem>
-              </RouterLink>
-              <RouterLink to="/servicios">
-                <ListItem sx={{ color: "white" }}>
-                  Nuestros Servicios
-                </ListItem>
-              </RouterLink>
-            </>
-          )}
+            ))}
+          </>
         </List>
       </Drawer>
     </div>

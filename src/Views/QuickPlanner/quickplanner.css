@@ -1,0 +1,191 @@
+.qp-container {
+    display: flex;
+    flex-direction: column;
+    width: 80vw;
+    margin: 3rem auto;
+    justify-content: center;
+}
+
+.qp-presentation {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #FFF;
+    font-size: 1rem;
+}
+
+.qp-presentation p {
+    text-align: center;
+}
+
+.qp-title {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.qp-title svg {
+    width: 10%;
+    height: 10%;
+}
+
+.qp5050div {
+    display: flex;
+    width: 100%;
+    gap: 2rem;
+}
+
+.qp5050div.inverted {
+    flex-direction: row-reverse;
+}
+
+.qp5050text,
+.qp5050img {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    position: relative;
+}
+
+.qp5050text {
+    color: #FFF;
+    font-size: 1.5rem;
+}
+
+.floatPhone {
+    position: absolute;
+    bottom: 14%;
+    left: 60%;
+    width: 50%;
+}
+
+.qp5050text.list {
+    list-style: disc !important;
+    align-items: flex-start;
+}
+
+.qp-prices {
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+
+.qp-prices-title {
+    font-size: 2rem;
+    margin-bottom: 3rem;
+}
+
+.qp-prices-items {
+    display: flex;
+    gap: 3rem;
+    margin-bottom: 6rem;
+}
+
+.qp-prc-item {
+    display: flex;
+    flex-direction: column;
+    border-radius: 2.8125rem;
+    background: #E7E7E7;
+    box-shadow: 4px 6px 4px 0px rgba(0, 0, 0, 0.25);
+    padding: 1rem 2rem;
+    min-width: 350px;
+}
+
+.qp-prc-item-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1rem;
+    border: 1px solid #000;
+    border-width: 0 0 1px 0;
+    padding-bottom: .5rem;
+    font-weight: 500;
+}
+
+.qp-prc-item-title .discount {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #FD6A00;
+}
+
+.qp-prc-item-title .discount img {
+    width: 1.5rem;
+    aspect-ratio: 1;
+}
+
+.qp-prc-item-title,
+.qp-prc-item-price,
+.qp-prc-item-price-before {
+    width: 100%;
+    color: #000;
+}
+
+.qp-prc-item-price,
+.qp-prc-item-price-before {
+    text-align: center;
+}
+
+.qp-prc-item-price {
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    font-size: 3rem;
+    margin: 1rem 0 0 0;
+    font-weight: 400;
+    gap: 1rem;
+}
+
+.qp-prc-item-price p {
+    font-size: 1.5rem;
+    font-weight: 300;
+}
+
+.qp-prc-item-price-before {
+    font-size: 1rem;
+    text-decoration: line-through;
+    text-decoration-thickness: 1px;
+    font-weight: 200;
+    margin-bottom: 1rem;
+}
+
+.qp-suscrip {
+    color: white;
+    background-color: #52BF50;
+    padding: .5rem 1rem;
+    border-radius: 2rem;
+    max-width: 200px;
+    margin: 1rem auto;
+}
+
+.qp-suscrip:hover {
+    background-color: #3A8A38;
+}
+
+@media (max-width:1024px) {
+
+    .qp5050div,
+    .qp5050div.inverted {
+        flex-direction: column;
+    }
+
+    .qp-presentation {
+        margin-bottom: 4rem;
+    }
+
+    .qp5050div {
+        margin-bottom: 2rem;
+    }
+
+    .qp-prices-items {
+        flex-direction: column;
+    }
+}
