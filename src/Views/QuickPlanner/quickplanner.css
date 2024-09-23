@@ -1,9 +1,12 @@
 .qp-container {
     display: flex;
     flex-direction: column;
-    width: 80vw;
-    margin: 3rem auto;
+    width: 100vw;
+    padding: 10vw;
     justify-content: center;
+    background: url("/public/Fondos/paper-brown.png");
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .qp-presentation {
@@ -11,7 +14,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    color: #FFF;
+    color: #000;
     font-size: 1rem;
 }
 
