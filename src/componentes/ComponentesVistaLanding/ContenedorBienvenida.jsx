@@ -6,10 +6,10 @@ export default function ContenedorBienvenida() {
     <div id='inicio' className='relative flex items-center flex-col'>
       <div className='HomeBgImage'></div>
       <div className='absolute text-white text-center flex flex-col text-2xl md:text-5xl mt-8 md:mt-[150px]'>
-        Haz que tu presencia en línea sea  <br /> inolvidable.
+        Elevamos tu presencia, multiplicamos <br /> tus ventas
         <Link to="/enviar-correo" className='mt-10 self-center'>
           <div id="fifthz" className="buttonBoz md:w-[500px] md:mt-[100px]">
-            <button className='buttonz md:text-3xl md:py-3'>¡Contáctanos!</button>
+            <button className='buttonz md:text-3xl md:py-3'>¡Subir de Nivel!</button>
           </div>
         </Link>
       </div>
