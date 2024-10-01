@@ -1,12 +1,10 @@
 .qp-container {
     display: flex;
     flex-direction: column;
-    width: 100vw;
-    padding: 10vw;
+    padding: 10vw 10vw 0;
     justify-content: center;
-    background: url("/public/Fondos/paper-brown.png");
+    background: url("/Fondos/paper-brown.png");
     background-repeat: no-repeat;
-    background-size: cover;
 }
 
 .qp-presentation {
@@ -35,6 +33,30 @@
     height: 10%;
 }
 
+.qp-tabs {
+    display: flex;
+    gap: 3rem;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+}
+
+.qp-tab {
+    border-radius: .75rem;
+    background: lightgray 50% / cover no-repeat;
+    box-shadow: 0px 4px 40px 0px rgba(0, 0, 0, 0.80);
+    font-weight: 500;
+    padding: .5rem 1rem;
+    cursor: pointer;
+    transition: all .5s;
+}
+
+.qp-tab.active {
+    color: white;
+    background: #949292;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.50) inset;
+}
+
 .qp5050div {
     display: flex;
     width: 100%;
@@ -56,6 +78,7 @@
 }
 
 .qp5050text {
+    align-items: unset;
     color: #FFF;
     font-size: 1.5rem;
 }
@@ -173,11 +196,34 @@
     background-color: #3A8A38;
 }
 
+/*Transiciones*/
+.fade-enter {
+    opacity: 0;
+}
+
+.fade-enter-active {
+    opacity: 1;
+    transition: opacity 300ms;
+}
+
+.fade-exit {
+    opacity: 1;
+}
+
+.fade-exit-active {
+    opacity: 0;
+    transition: opacity 300ms;
+}
+
+/*Fin Transiciones*/
+
+
 @media (max-width:1024px) {
 
     .qp5050div,
     .qp5050div.inverted {
         flex-direction: column;
+        align-items: center;
     }
 
     .qp-presentation {
@@ -190,5 +236,15 @@
 
     .qp-prices-items {
         flex-direction: column;
+    }
+
+    .qp-presentation {
+        margin: 0;
+    }
+    .qp-tabs{
+        margin: 2rem 0 4rem;
+    }
+    .qp5050img{
+        width: 75%;
     }
 }

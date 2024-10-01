@@ -1,5 +1,5 @@
 import Tarjeta from "./TarjetaCliente";
-import "../../../public/Fondos/Imagen4.jpg"
+import "/Fondos/Imagen4.jpg"
 import clientesData from "../../Views/DetallesClientes/clientesData";
 
 export default function ContenedorTarjeta() {
