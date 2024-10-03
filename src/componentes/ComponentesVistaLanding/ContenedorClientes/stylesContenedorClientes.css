@@ -1,25 +1,23 @@
 .galeriaClientes {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    width: 80%;
-    margin: 10px auto;
-    max-width: 70%;
-    gap: 10px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    width: min(80vw, 1280px);
+    gap: 10rem;
 }
 
 .cliente {
-    position: relative;
-    width: calc(50% - 10px);
-    max-width: 400px;
+    width: 100%;
     height: fit-content;
-    margin-bottom: 20px;
     cursor: pointer;
-    transition: transform 0.3s ease;
+    transition: all 0.5s ease;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .cliente:hover {
-    transform: scale(1.09);
+    transform: scale(1.1);
 }
 
 .cliente img {
@@ -33,17 +31,26 @@
     width: 100%;
     text-align: center;
     font-weight: bold;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.75);
     color: white;
     padding: 5px;
-    box-sizing: border-box;
-    top: 50%;
-    transform: translateY(-50%);
+    opacity: 0;
+    transition: all 0.5s ease;
+}
+
+.cliente:hover .nombreCliente {
+    opacity: 1;
+}
+
+@media (max-width:1024px) {
+    .galeriaClientes {
+        gap: 5rem;
+    }
 }
 
 @media (max-width:767px) {
-    .cliente {
-        width: 100%;
-        max-width: none;
+    .galeriaClientes {
+        grid-template-columns: 1fr;
+        gap: 5rem;
     }
 }

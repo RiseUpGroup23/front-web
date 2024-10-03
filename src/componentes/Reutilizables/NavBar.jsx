@@ -16,10 +16,9 @@ import '../ComponentesVistaLanding/style.css';
 
 const menuItems = [
   { text: "Inicio", to: "/" },
-  { text: "Contacto", to: "/enviar-correo" },
-  { text: "¿Quiénes Somos?", to: "/#quienesSomos" },
   { text: "Servicios", to: "/servicios" },
-  { text: "Nuestros Clientes", to: "/nuestros-clientes" },
+  { text: "Portfolio", to: "/nuestros-clientes" },
+  { text: "Contacto", to: "/enviar-correo" },
   { text: "QuickPlanner", to: "/quickplanner" },
 ]
 

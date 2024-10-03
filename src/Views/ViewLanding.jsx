@@ -25,8 +25,8 @@ export default function Landing() {
         <div>
             <ContenedorBienvenida />
             <ContenedorPreguntas />
-            <ContenedorClientes />
             <ContenedorServicios />
+            <ContenedorClientes />
             <ContenedorContacto />
         </div>
     )

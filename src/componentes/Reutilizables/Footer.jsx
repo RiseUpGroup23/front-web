@@ -1,6 +1,6 @@
 export default function Footer() {
   return (
-    <div className="bg-zinc-300 w-full h-0.5 mt-auto">
+    <div className="w-full h-0.5 mt-auto">
       <div className="flex flex-col items-center">
         <div className="flex w-full lg:w-[220px] gap-4 sm:gap-5 px-2 sm:px-5 md:mt-10 mt-4 justify-center">
           <a href="https://www.instagram.com/riseup_code?igsh=MTZqN2kwM3hveDlpZQ==" target="_blank">
