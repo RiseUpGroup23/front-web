@@ -11,12 +11,12 @@ const serviciosData = [
         inicioP: "La ",
         parrafo: " en páginas web permite mejorar la eficiencia y la calidad del desarrollo, la gestión y el mantenimiento de sitios web, liberando recursos humanos para actividades más estratégicas y creativas. Esta práctica se basa en el uso inteligente de herramientas tecnológicas que simplifican tareas repetitivas y facilitan la optimización continua del sitio web."
     },
-    {
-        servicio: "Manejo de Imágenes en Redes Sociales",
-        img: "/Servicios/RedesSociales.png",
-        inicioP: "El ",
-        parrafo: " es un componente clave de la estrategia de marketing digital de una marca. Implica crear, editar y optimizar imágenes atractivas y relevantes para captar la atención de la audiencia, promover el compromiso y fortalecer la identidad visual de la marca en las plataformas de redes sociales."
-    },
+    // {
+    //     servicio: "Manejo de Imágenes en Redes Sociales",
+    //     img: "/Servicios/RedesSociales.png",
+    //     inicioP: "El ",
+    //     parrafo: " es un componente clave de la estrategia de marketing digital de una marca. Implica crear, editar y optimizar imágenes atractivas y relevantes para captar la atención de la audiencia, promover el compromiso y fortalecer la identidad visual de la marca en las plataformas de redes sociales."
+    // },
     {
         servicio: "Tercerización de Herramientas",
         img: "/Servicios/Terciarizacion.png",

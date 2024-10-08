@@ -66,8 +66,9 @@ export default function NavBar() {
         anchor="right"
         open={menuVisible}
         onClose={toggleMenu}
+        className="drawerMobile"
       >
-        <List sx={{ position: "relative", minWidth: "40vw", backgroundColor: "#1e1e1e", height: "100%" }}>
+        <List sx={{ position: "relative", minWidth: "50vw", backgroundColor: "#1e1e1e", height: "100%" }}>
           <IconButton
             edge="start"
             onClick={toggleMenu}
@@ -78,7 +79,7 @@ export default function NavBar() {
           <>
             {menuItems.map((item, index) => (
               <RouterLink to={item.to} key={index}>
-                <ListItem sx={{ marginTop: `${index === 0 ? "2rem" : "0"}`, color: "white" }}>
+                <ListItem sx={{ marginTop: `${index === 0 ? "4rem" : ".5rem"}`, color: "white",fontSize:"1.5rem" }}>
                   {item.text}
                 </ListItem>
               </RouterLink>

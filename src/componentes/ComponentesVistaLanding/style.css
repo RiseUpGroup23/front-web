@@ -28,7 +28,7 @@
 }
 
 .link-boton {
-    margin-top: 10px;
+    margin-top: 1rem;
     align-self: center;
 }
 
@@ -38,7 +38,7 @@
     color: white;
     background: green;
     border-radius: 35px;
-    padding: 1px 60px;
+    padding: .5rem 4rem;
     font-weight: 700;
 }
 
@@ -161,7 +161,7 @@
 
 .contenedor-servicios,
 .contenedor-preguntas {
-    margin: 10rem 0;
+    margin: 5rem 0;
     gap: 6rem;
 }
 
@@ -237,8 +237,13 @@
     }
 
     .contenedor-servicios {
-        margin: 10vh 0;
+        margin: 5vh 0;
         gap: 6vh;
+    }
+
+    .porTitulo {
+        text-align: center;
+        max-width: 80vw;
     }
 }
 

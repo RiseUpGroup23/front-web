@@ -1,17 +1,17 @@
-.titulo {
+.sectionTitle {
     color: white;
-    font-size: 2.5rem;
-    display: flex;
-    margin-top: 1%;
-    justify-content: center;
+    font-size: clamp(1.5rem, 5vw, 2.5rem);
+    margin-top: 5rem;
+    text-align: center;
+    font-weight: 500;
 }
 
-.subtitulo {
+.sectionSubtitle {
     color: white;
-    font-size: 1.8rem;
-    display: flex;
-    margin-top: 1%;
-    justify-content: center;
+    font-size: clamp(1rem, 3vw, 1.25rem);
+    margin-top: 1.75rem;
+    text-align: center;
+    font-weight: 400;
 }
 
 .contenedorServicio {
@@ -20,13 +20,14 @@
     align-items: center;
     border: solid 4px rgba(255, 255, 255, 0.6);
     border-radius: 2rem;
-    margin-top: 1.5%;
+    padding: 2rem;
+    gap: 2rem;
 }
 
 .gridServicios {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    width: min(1240px, 96vw);
+    width: max(1280px, 80vw);
     margin: 3rem auto;
     grid-gap: 4rem 3rem;
 }
@@ -39,53 +40,16 @@
 .imagenServicio {
     width: 7rem;
     height: 7rem;
-    margin: 2rem 0;
 }
 
 .descripcionServicio {
     text-align: center;
-    font-size: 1.4rem;
-    margin-top: 1%;
+    font-size: clamp(1rem, 2vw, 1.5rem);
     color: rgba(255, 255, 255, 1);
-    margin: 0 3rem 3rem 3rem;
 }
 
 @media (max-width: 1024px) {
     .gridServicios {
         grid-template-columns: repeat(1, 1fr);
-    }
-}
-
-@media (max-width: 767px) {
-    .titulo {
-        font-size: 2rem;
-    }
-
-    .subtitulo {
-        font-size: 1.5rem;
-        text-align: center;
-    }
-
-    .contenedorServicio {
-        margin-left: 2%;
-        margin-right: 2%;
-        margin-top: 5%;
-        margin-bottom: 5%;
-    }
-
-    .servicioNombre {
-        text-align: center;
-        font-size: 1.2rem;
-    }
-
-    .imagenServicio {
-        width: 20%;
-        height: auto;
-        margin-top: 3%;
-    }
-
-    .descripcionServicio {
-        font-size: 1.2rem;
-        margin: 0 2rem 2rem 2rem;
     }
 }

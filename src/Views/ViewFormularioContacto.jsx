@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import { Alert, CircularProgress } from '@mui/material';
 import './enviar.css';
 import Footer from '../componentes/Reutilizables/Footer';
+import TaskAltIcon from '@mui/icons-material/TaskAlt';
 
 export default function FormularioContacto() {
     useEffect(() => {
@@ -15,10 +16,9 @@ export default function FormularioContacto() {
         email: '',
         descripcion: '',
     })
-
-    const [errors, setErrors] = useState({})
     const [mensaje, setMensaje] = useState({ type: "hidden", msg: "" })
     const [loading, setLoading] = useState(false)
+    const [alreadySent, setAlreadySent] = useState(false)
 
 
     useEffect(() => {
@@ -35,152 +35,137 @@ export default function FormularioContacto() {
             return;
         }
         setFormData({ ...formData, [name]: value });
-        setErrors({ ...errors, [name]: '' });
     }
 
     const handleSubmit = async (e) => {
         e.preventDefault();
         setLoading(true)
-        const newErrors = {};
-        if (!formData.nombre.trim()) {
-            newErrors.nombre = 'Este campo es obligatorio';
-        }
-
-        if (!formData.nombreEmpresa.trim()) {
-            newErrors.nombreEmpresa = 'Este campo es obligatorio';
-        }
-
-        if (!formData.email.trim()) {
-            newErrors.email = 'Este campo es obligatorio';
-        } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
-            newErrors.email = 'Ingresa un correo electrónico válido';
-        }
-
-        if (formData.telefono.trim() && !/^\d{3}\d{3}\d{4}$/.test(formData.telefono)) {
-            newErrors.telefono = 'Ingresa un número de teléfono válido';
-        }
-
-        setErrors(newErrors);
-
-        if (Object.keys(newErrors).length === 0) {
-            try {
-                const response = await fetch('https://backriseup-production.up.railway.app/enviar-correo', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify(formData),
+        try {
+            const response = await fetch('https://backriseup-production.up.railway.app/enviar-correo', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(formData),
+            });
+            if (response.ok) {
+                console.log('Correo enviado con correctamente');
+                setMensaje({ type: "success", msg: 'Correo enviado correctamente' });
+                setFormData({
+                    nombre: '',
+                    nombreEmpresa: '',
+                    telefono: '',
+                    email: '',
+                    descripcion: '',
                 });
-                if (response.ok) {
-                    console.log('Correo enviado con correctamente');
-                    setMensaje({ type: "success", msg: 'Correo enviado correctamente' });
-                    setFormData({
-                        nombre: '',
-                        nombreEmpresa: '',
-                        telefono: '',
-                        email: '',
-                        descripcion: '',
-                    });
-                }
-                setLoading(false)
-            } catch (error) {
-                console.error('Error de red:', error);
-                setMensaje({ type: "error", msg: 'Error al enviar el correo' });
-                setLoading(false)
+                setAlreadySent(true)
             }
+            setLoading(false)
+        } catch (error) {
+            console.error('Error de red:', error);
+            setMensaje({ type: "error", msg: 'Error al enviar el correo' });
+            setLoading(false)
         }
+
     }
 
     return (
-        <div className="flex flex-col items-center mt-5">
-            <div className="justify-center text-white text-center text-3xl md:text-4xl lg:text-4xl font-medium">
-                ¿Necesitas elevar tu <br /> presencia?
+        <div className="contenedor-servicios">
+            <div className="porTitulo">
+                <div className="home-pregunta">
+                    <strong>¿Necesitas elevar tu presencia?</strong>
+                </div>
+                <p>Contanos sobre tu proyecto, para poder brindarte el mejor asesoramiento</p>
             </div>
-            <div className="justify-center text-white text-center text-1xl mt-6 md:text-2xl lg:text-2xl font-medium">
-                Contanos sobre tu proyecto, para <br /> poder brindarte el mejor <br /> asesoramiento
-            </div>
-            <form className="rounded-3xl mt-6 border px-10 py-8 text-white mb-10" onSubmit={handleSubmit}>
+            {!alreadySent ? <form className="formCont-form" onSubmit={handleSubmit}>
                 <div className="flex flex-col">
                     {mensaje.type !== "hidden" && (
                         <Alert className="mensaje" severity={mensaje.type}>
                             {mensaje.msg}
                         </Alert>
                     )}
-                    <div className="flex flex-col">
-                        <label>Nombre: <span className='text-red-600 font-bold'>*</span></label>
+                    <div className="formCont-field">
+                        <label className="formCont-label">Nombre: <span className='text-red-600 font-bold'>*</span></label>
                         <input
                             type="text"
                             name="nombre"
                             value={formData.nombre}
                             onChange={handleInputChange}
-                            className={`text-black rounded-md ${errors.nombre && 'border-red-500'} p-2`}
+                            className={`formCont-input`}
                             placeholder="Escribe tu nombre"
                             required
                         />
-                        {errors.nombre && <p className="text-red-500">{errors.nombre}</p>}
                     </div>
-                    <div className="flex flex-col mt-5">
-                        <label>Nombre de la Empresa: <span className='text-red-600 font-bold'>*</span></label>
-                        <div></div>
+
+                    <div className="formCont-field">
+                        <label className="formCont-label">Nombre de la empresa: <span className='text-red-600 font-bold'>*</span></label>
                         <input
                             type="text"
                             name="nombreEmpresa"
                             value={formData.nombreEmpresa}
                             onChange={handleInputChange}
-                            className={`text-black rounded-md ${errors.nombreEmpresa && 'border-red-500'} p-2`}
+                            className={`formCont-input`}
                             placeholder="RiseUp"
                             required
                         />
-                        {errors.nombreEmpresa && <p className="text-red-500">{errors.nombreEmpresa}</p>}
                     </div>
-                    <div className="flex flex-col mt-5">
-                        <label>Número de Teléfono:</label>
+
+                    <div className="formCont-field">
+                        <label className="formCont-label">Número de Teléfono: <span className='text-red-600 font-bold'>*</span></label>
                         <input
+                            type="text"
                             name="telefono"
                             value={formData.telefono}
                             onChange={handleInputChange}
-                            className={`text-black rounded-md ${errors.telefono && 'border-red-500'} p-2`}
+                            className={`formCont-input`}
                             placeholder="123-456-7890"
+                            required
                         />
-                        {errors.telefono && <p className="text-red-500">{errors.telefono}</p>}
                     </div>
-                    <div className="flex flex-col mt-5">
-                        <label>Email: <span className='text-red-600 font-bold'>*</span></label>
+
+                    <div className="formCont-field">
+                        <label className="formCont-label">Email: <span className='text-red-600 font-bold'>*</span></label>
                         <input
                             type="text"
                             name="email"
                             value={formData.email}
                             onChange={handleInputChange}
-                            className={`text-black rounded-md ${errors.email && 'border-red-500'} p-2`}
+                            className={`formCont-input`}
                             placeholder="correo@correo.com"
                             required
                         />
-                        {errors.email && <p className="text-red-500">{errors.email}</p>}
                     </div>
-                    <div className="flex flex-col mt-5">
-                        <label>Contanos a qué se dedica tu empresa:</label>
+
+                    <div className="formCont-field">
+                        <label className="formCont-label">Contanos a qué se dedica tu empresa: <span className='text-red-600 font-bold'>*</span></label>
                         <textarea
                             name="descripcion"
                             value={formData.descripcion}
                             onChange={handleInputChange}
+                            className={`formCont-textarea`}
                             cols="30"
                             rows="10"
-                            className="text-black resize-none h-24 rounded-md p-2"
                         />
                     </div>
 
-                    <span className='text-red-600 mt-2'>* Campos Obligatorios</span>
+                    <span className='formCont-required'>* Campos Obligatorios</span>
 
-                    <button type='submit' className='mt-5 self-center'>
-                        <div id="fifth" className="buttonBox md:w-[400px]">
+                    <button type='submit' className='formCont-button'>
+                        <div id="fifth" className="buttonBox">
                             {!loading ?
                                 <span>¡Subir de Nivel!</span> :
                                 <CircularProgress size={25} sx={{ color: "white" }} />}
                         </div>
                     </button>
                 </div>
-            </form>
-            <Footer/>
+            </form> :
+                <div className='alreadySent'>
+                    <TaskAltIcon sx={{ fontSize: 125, color: "white" }} />
+                    <h2>¡Gracias por contactarnos!</h2>
+                    <h3>Te responderemos por correo a la brevedad.</h3>
+                </div>}
+            <Footer />
         </div>
-    )
+    );
+
 }
