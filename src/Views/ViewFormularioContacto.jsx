@@ -41,7 +41,7 @@ export default function FormularioContacto() {
         e.preventDefault();
         setLoading(true)
         try {
-            const response = await fetch('https://backriseup-production.up.railway.app/enviar-correo', {
+            const response = await fetch('https://back-web-psi.vercel.app/enviar-correo', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
