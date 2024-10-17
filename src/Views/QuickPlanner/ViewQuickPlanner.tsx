@@ -53,7 +53,7 @@ const ViewQuickPlanner: React.FC = () => {
                             PLAN SUSCRIPCIÓN ANUAL
                             <div className="discount">
                                 <img src='/QuickPlanner/discount.png' alt='discount' />
-                                13%
+                                35%
                             </div>
                         </span>
                         <span className="qp-prc-item-price">
