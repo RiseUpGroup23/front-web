@@ -57,7 +57,7 @@ const ViewQuickPlanner: React.FC = () => {
                             </div>
                         </span>
                         <span className="qp-prc-item-price">
-                            $315.000 <p>/ mes</p>
+                            $315.000 <p>/ año</p>
                         </span>
                         <span className="qp-prc-item-price-before">
                             $480.000
