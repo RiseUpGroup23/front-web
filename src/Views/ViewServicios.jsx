@@ -14,7 +14,7 @@ export default function Servicios() {
             <div className="contenedor-servicios">
                 <div className="porTitulo">
                     <div className="home-pregunta">
-                        <strong>Servicios de la Empresa</strong>
+                        <strong>Servicios de la agencia</strong>
                     </div>
                     <p>Te mostramos en detalle los servicios que ofrecemos</p>
                 </div>

@@ -1,42 +1,144 @@
-.contenedorViewDetalleCliente {
-    margin-top: 5px;
+.detailCont {
+    display: flex;
+    flex-direction: column;
+}
+
+.detailTitleImage {
+    display: flex;
+}
+
+.detailTitleText,
+.detailTitleImg {
+    width: 50%;
+    max-height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.detailTitleText h1 {
+    color: white;
+    text-align: left;
+    font-size: clamp(2rem, 4vw, 5rem);
+}
+
+.detailTitleText h1 :last-child {
+    font-size: clamp(1rem, 3vw, 4rem)
+}
+
+.detailTitleImg {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 15% 100%);
+    background: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 400px;
+}
+
+.detailTitleImg img {
+    height: 75%;
+    max-width: 50%;
+    object-fit: contain;
+}
+
+.detailContent {
+    width: min(80vw, 1280px);
+    margin: auto;
+    margin-top: 3rem;
+}
+
+.detailTitleDescription span {
+    color: white;
+    white-space: pre-line;
+}
+
+.detailCardsCont {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.detailServices {
+    margin-top: 3rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.detailContentTitle {
+    color: white;
+    font-size: clamp(1rem, 2vw, 3rem);
+    font-weight: bold;
+}
+
+.photosCont {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.photosCont img {
+    object-fit: contain;
+    max-height: 400px;
+}
+
+.buttonVerWeb {
+    height: 30vh;
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: space-between;
+    gap: 3rem;
+}
+
+.buttonVerWeb a {
+    color: white;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
     justify-content: center;
-    text-align: center;
+    gap: .5rem;
 }
 
-.contenedorViewDetalleCliente .nameCliente {
-    color: rgba(255, 255, 255, 1);
-    font-weight: bold;
-    font-size: 28px;
-    text-align: center;
+.buttonVerWeb a:hover {
+    text-decoration: underline;
 }
 
-.contenedorViewDetalleCliente .imagenCliente {
-    width: 800px;
-    height: 400px;
-    margin-top: 1%;
-}
-
-.contenedorViewDetalleCliente .description {
-    color: rgba(255, 255, 255, 1);
-    width: 70%;
-    font-size: 20px;
-    text-align: justify;
-    margin-top: 2%;
-
-}
-
-@media (max-width: 767px) {
-    .contenedorViewDetalleCliente .imagenCliente {
-        width: 90%;
-        height: 60%;
+@media (max-width:767px) {
+    .detailTitleImage {
+        flex-direction: column-reverse;
     }
 
-    .contenedorViewDetalleCliente .description {
-        width: 90%;
-        font-size: 18px;
+    .detailTitleText,
+    .detailTitleImg {
+        width: 100%;
+    }
+
+    .detailTitleImg {
+        clip-path: unset;
+        min-height: 200px;
+    }
+
+    .detailTitleText {
+        margin-top: 2rem;
+    }
+
+    .detailTitleText h1 {
+        text-align: center;
+    }
+
+    .detailTitleImg {
+        height: min(40vw, 15rem);
+    }
+
+    .photosCont {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .photosCont img {
+        max-width: 100%;
     }
 }

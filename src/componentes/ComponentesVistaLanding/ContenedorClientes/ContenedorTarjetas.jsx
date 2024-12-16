@@ -6,7 +6,7 @@ export default function ContenedorTarjetas() {
     return (
         <div className="galeriaClientes">
             {clientesData.map((cliente, index) => (
-                <TarjetaCliente key={index} name={cliente.name} img={cliente.img}/>
+                <TarjetaCliente key={index} cliente={cliente}/>
             ))}
         </div>
     );

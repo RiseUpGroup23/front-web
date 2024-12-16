@@ -4,43 +4,68 @@ import Footer from "../../componentes/Reutilizables/Footer";
 import clientesData from "./clientesData";
 import { useParams } from "react-router-dom";
 import "./ViewDetalleCliente.css";
+import Tarjeta from "../../componentes/ComponentesVistaLanding/ContenedorServicio/TarjetaServicio";
+import LanguageIcon from '@mui/icons-material/Language';
 
 export default function DetalleCliente() {
-    const { name } = useParams();
-    const cliente = clientesData.find(cliente => cliente.name === name);
-    const { img, description, link } = cliente;
+    const { location } = useParams();
+    const cliente = clientesData.find(cliente => cliente.location === location);
+    const { logo, description, link, name, secondLine, services, screenshots } = cliente;
 
+    const TarjetaData = [
+        { id: "diseno", nombre: 'Diseño y Desarrollo Web', imagen: '/Servicios/DesarrolloWeb.png' },
+        { id: "auto", nombre: 'Automatización de Procesos', imagen: '/Servicios/AutomatizacionProcesos.png' },
+        { id: "tercerizacion", nombre: 'Terciarización de Herramientas', imagen: '/Servicios/Terciarizacion.png' },
+        { id: "rebranding", nombre: 'Rebranding', imagen: '/Servicios/Rebranding.png' },
+    ]
     return (
-        <div className="contenedorViewDetalleCliente">
-            <h1 className="nameCliente">{name}</h1>
-            <img src={img} className="imagenCliente" />
-
-            <p className="description">{description}</p>
-
-            <div id="fifthz" className="buttonBox md:w-[500px] md:mt-7 mt-3 md:mb-0 mb-3 md:text-3xl px-6">
-                <a href={link} target="_blank">
-                    <button>Visitar su Página Web</button>
-                </a>
-            </div>
-
-            <div className="bg-zinc-300 h-0.5" style={{ width: "90%", marginTop: "2%" }}>
-                <div className="flex flex-col items-center">
-                    <div className="flex w-full lg:w-[220px] gap-4 sm:gap-5 px-2 sm:px-5 md:mt-10 mt-4 justify-center">
-                        <a href="https://www.instagram.com/riseup_code?igsh=MTZqN2kwM3hveDlpZQ==" target="_blank">
-                            <img src="/Iconos/Instagram.svg" className="w-10 h-10 lg:w-12 lg:h-12 cursor-pointer" />
-                        </a>
-                        <a href="https://www.linkedin.com/company/riseuptuc/" target="_blank">
-                            <img src="/Iconos/LinkedIn.svg" className="w-10 h-10 lg:w-12 lg:h-12 cursor-pointer" />
-                        </a>
-                        <a href="https://www.facebook.com/profile.php?id=61556582908815" target="_blank">
-                            <img src="/Iconos/Facebook.svg" className="w-10 h-10 lg:w-12 lg:h-12 cursor-pointer" />
-                        </a>
-                    </div>
-                    <a href="#inicio">
-                        <img src="/LogoRiseUp/Logo.png" className="w-[100px] lg:w-[150px] mt-2" />
-                    </a>
+        <div className="detailCont">
+            <div className="detailTitleImage">
+                <div className="detailTitleText">
+                    <h1>
+                        {name}
+                        {secondLine && <p>{secondLine}</p>}
+                    </h1>
+                </div>
+                <div className="detailTitleImg">
+                    <img src={logo} alt={name} />
                 </div>
             </div>
+            <div className="detailContent">
+                <div className="detailTitleDescription">
+                    <span>
+                        {description}
+                    </span>
+                </div>
+                <div className="detailServices">
+                    <span className="detailContentTitle">Capturas de pantalla:</span>
+                    <div className="photosCont">
+                        {screenshots?.map((photo, index) => (
+                            <img src={photo} alt={`photo-${index + 1}`} key={`photo-${index + 1}`} />
+                        ))}
+                    </div>
+                </div>
+                <div className="detailServices">
+                    <span className="detailContentTitle">Servicios realizados:</span>
+                    <div className="detailCardsCont">
+                        {services?.map((srvc, index) => {
+                            const service = TarjetaData.find(e => e.id === srvc)
+                            return (
+                                <Tarjeta key={index} nombre={service.nombre} imagen={service.imagen} />
+                            )
+                        })}
+                    </div>
+                </div>
+                <div className="buttonVerWeb">
+                    <div></div>
+                    <a href={link} target="#blank">
+                        Visitar página web
+                        <LanguageIcon />
+                    </a>
+                    <div className="linea-separadora" />
+                </div>
+            </div>
+            <Footer />
         </div>
     )
-};
+}

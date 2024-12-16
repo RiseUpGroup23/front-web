@@ -35,7 +35,7 @@ export default function NavBar() {
         <Toolbar sx={{ display: "flex", justifyContent: "space-between" }}>
           <RouterLink to="/">
             <img
-              src="LogoRiseUp/Logo.png" className="object-contain w-[125px]  mt-1 cursor-pointer" style={{ maxWidth: "unset" }}
+              src="/LogoRiseUp/Logo.png" className="object-contain w-[125px]  mt-1 cursor-pointer" style={{ maxWidth: "unset" }}
             />
           </RouterLink>
           <Hidden lgUp>

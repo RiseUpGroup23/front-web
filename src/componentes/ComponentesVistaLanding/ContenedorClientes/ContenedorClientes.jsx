@@ -6,7 +6,7 @@ export default function ContenedorClientes() {
         <div className="contenedor-servicios">
             <div className="porTitulo">
                 <div className="home-pregunta">
-                    <strong>Portfolio de la empresa</strong>
+                    <strong>Portfolio de la agencia</strong>
                 </div>
                 <p>Te mostramos nuestros proyectos realizados con éxito</p>
             </div>
